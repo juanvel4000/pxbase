@@ -6,6 +6,14 @@ project(
     meson_version: '>=1.1',
 )
 
+progs = [
+  'yes',
+]
+
+include = include_directories('include')
+
 if get_option('doc').enabled()
   subdir('doc')
 endif
+
+subdir('src')
