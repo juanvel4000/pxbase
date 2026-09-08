@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void yes(int argc, char **argv)
+int yes(int argc, char **argv)
 {
     for (;;) {
         int i;
@@ -13,6 +13,8 @@ void yes(int argc, char **argv)
 
         putchar('\n');
     }
+
+    return 0;
 }
 
 int main(int argc, char **argv)
@@ -21,6 +23,5 @@ int main(int argc, char **argv)
         for (;;)
             puts("y");
 
-    yes(argc, argv);
-    return 0;
+    return yes(argc, argv);
 }

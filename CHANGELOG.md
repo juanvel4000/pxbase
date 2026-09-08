@@ -9,5 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- basic `yes` program
-- `VERSION`, `CONTRIBUTING.md`, `README.md`, `LICENSE`, `CHANGELOG.md`, `.gitignore`, and a `.clang-format`
+- add a basic `true` program
+- add a basic `yes` program
+- add `VERSION`, `CONTRIBUTING.md`, `README.md`, `LICENSE`, `CHANGELOG.md`, `.gitignore`, and a `.clang-format`

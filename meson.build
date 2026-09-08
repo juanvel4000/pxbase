@@ -8,6 +8,7 @@ project(
 
 progs = [
   'yes',
+  'true',
 ]
 
 include = include_directories('include')
