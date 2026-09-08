@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int yes(int argc, char **argv)
 {
@@ -14,7 +15,7 @@ int yes(int argc, char **argv)
         putchar('\n');
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }
 
 int main(int argc, char **argv)

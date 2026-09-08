@@ -3,6 +3,7 @@ foreach prog : progs
     prog,
     [prog + '.c'],
     include_directories: include,
+    link_with: common,
     install: true,
   )
 endforeach

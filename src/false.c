@@ -1,3 +1,5 @@
-int false(void) { return 1; }
+#include <stdlib.h>
 
-int main(void) { return false(); }
+int false(void) { return EXIT_FAILURE; }
+
+int main(int argc, char **argv) { return false(); }

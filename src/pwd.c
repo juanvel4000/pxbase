@@ -1,10 +1,10 @@
 #include <errno.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <sys/stat.h>
-#include <string.h>
 #include <limits.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <unistd.h>
 
 static void usage(void)
 {
@@ -57,5 +57,5 @@ int main(int argc, char **argv)
         usage();
 
     printf("%s\n", pwd_getcwd(cwd, physical));
-    return 0;
+    return EXIT_SUCCESS;
 }

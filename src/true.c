@@ -1,3 +1,5 @@
-int true(void) { return 0; }
+#include <stdlib.h>
 
-int main(void) { return true(); }
+int true(void) { return EXIT_SUCCESS; }
+
+int main(int argc, char **argv) { return true(); }
