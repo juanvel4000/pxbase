@@ -15,6 +15,7 @@ progs = [
   'yes',
   'true',
   'pwd',
+  'false',
 ]
 
 include = include_directories('include')
