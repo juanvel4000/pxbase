@@ -1,3 +1,3 @@
 int true(void) { return 0; }
 
-int main(int argc, char **argv) { return true(); }
+int main(void) { return true(); }

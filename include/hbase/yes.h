@@ -1,4 +1,4 @@
-#ifndef TRUE_H
-#define TRUE_H
+#ifndef YES_H
+#define YES_H
 int yes(int argc, char **argv)
-#endif /* TRUE_H */
+#endif /* YES_H */
