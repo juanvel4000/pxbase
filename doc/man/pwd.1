@@ -1,0 +1,34 @@
+.Dd September 2026
+.Dt PWD 1
+.Os
+
+.Sh NAME
+
+.Nm pwd
+.Nd print the current working directory
+
+.Sh SYNOPSIS
+
+.Nm
+.Op Fl LP
+
+.Sh DESCRIPTION
+
+.Nm
+prints the path of the current working directory.
+
+.Sh OPTIONS
+
+.Bl -tag -width Ds
+
+.It Fl L
+
+logical path, uses
+.Ev PWD .
+default option.
+
+.It Fl P
+
+physical path, avoids all symlinks.
+
+.El

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- add a basic `pwd` program
 - add a basic `false` program
 - add a basic `true` program
 - add a basic `yes` program

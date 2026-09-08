@@ -6,9 +6,15 @@ project(
     meson_version: '>=1.1',
 )
 
+add_project_arguments(
+  '-D_POSIX_C_SOURCE=200809L',
+  language: 'c',
+)
+
 progs = [
   'yes',
   'true',
+  'pwd',
 ]
 
 include = include_directories('include')
