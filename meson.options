@@ -1,0 +1,6 @@
+option(
+  'doc',
+  type: 'feature',
+  value: 'enabled',
+  description: 'hbase documentation.'
+)
