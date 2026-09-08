@@ -9,8 +9,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+### Changed
+
+### Fixed
+
+### Removed
+
+## [0.1.0] - 2026-09-08
+
+### Added
+
 - add a basic `pwd` program
 - add a basic `false` program
 - add a basic `true` program
 - add a basic `yes` program
 - add `VERSION`, `CONTRIBUTING.md`, `README.md`, `LICENSE`, `CHANGELOG.md`, `.gitignore`, and a `.clang-format`
+
+### Changed
+
+### Fixed
+
+### Removed
