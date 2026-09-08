@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - use `EXIT_SUCCESS` and `EXIT_FAILURE` everywhere
+- use `main(void)` for `true` and `false`
 
 ### Fixed
 

@@ -2,4 +2,4 @@
 
 int true(void) { return EXIT_SUCCESS; }
 
-int main(int argc, char **argv) { return true(); }
+int main(void) { return true(); }
