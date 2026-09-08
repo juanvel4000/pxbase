@@ -19,9 +19,10 @@ int yes(int argc, char **argv)
 
 int main(int argc, char **argv)
 {
-    if (argc == 1)
-        for (;;)
-            puts("y");
+    if (argc == 1) {
+        argv[1] = "y";
+        argc = 2;
+    }
 
     return yes(argc, argv);
 }

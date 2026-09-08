@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- fix minor inconsistency in `false.1`
+- deduplicate default-arg logic in `yes.c`
+
 ### Removed
 
 ## [0.1.0] - 2026-09-08
