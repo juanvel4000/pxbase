@@ -1,4 +1,4 @@
-#include <hbase/pwd.h>
+#include <hbase/false.h>
 #include <stdlib.h>
 
 int false(void) { return EXIT_FAILURE; }
