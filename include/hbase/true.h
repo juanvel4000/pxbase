@@ -1,4 +1,4 @@
 #ifndef HBASE_TRUE_H
 #define HBASE_TRUE_H
-int true(void);
+int htrue(void);
 #endif /* HBASE_TRUE_H */

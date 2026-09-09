@@ -12,6 +12,7 @@ hbase is a minimalistic implementation of core POSIX user utilities. It aims for
 - `pwd`
 - `basename`
 - `dirname`
+- `echo`
 
 ## quick start
 
@@ -91,6 +92,7 @@ man pages are installed when documentation is enabled at build time
 | `pwd(1)`      | the `pwd` program      |
 | `basename(1)` | the `basename` program |
 | `dirname(1)`  | the `dirname` program  |
+| `echo(1)`     | the `echo` program     |
 
 ## project status
 

@@ -2,6 +2,6 @@
 #include <hbase/true.h>
 #include <stdlib.h>
 
-int true(void) { return EXIT_SUCCESS; }
+int htrue(void) { return EXIT_SUCCESS; }
 
-int main(void) { return true(); }
+int main(void) { return htrue(); }
