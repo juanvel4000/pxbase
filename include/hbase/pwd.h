@@ -1,4 +1,4 @@
-#ifndef PWD_H
-#define PWD_H
+#ifndef HBASE_PWD_H
+#define HBASE_PWD_H
 int pwd(int argc, char **argv);
-#endif /* PWD_H */
+#endif /* HBASE_PWD_H */

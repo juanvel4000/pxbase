@@ -1,4 +1,4 @@
-#ifndef TRUE_H
-#define TRUE_H
+#ifndef HBASE_TRUE_H
+#define HBASE_TRUE_H
 int true(void);
-#endif /* TRUE_H */
+#endif /* HBASE_TRUE_H */

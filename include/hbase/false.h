@@ -1,4 +1,4 @@
-#ifndef FALSE_H
-#define FALSE_H
+#ifndef HBASE_FALSE_H
+#define HBASE_FALSE_H
 int false(void);
-#endif /* FALSE_H */
+#endif /* HBASE_FALSE_H */

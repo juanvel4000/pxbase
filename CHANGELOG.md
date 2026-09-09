@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- namespace header guards
 - use `EXIT_SUCCESS` and `EXIT_FAILURE` everywhere
 - use `main(void)` for `true` and `false`
 - include their respective headers for each program
