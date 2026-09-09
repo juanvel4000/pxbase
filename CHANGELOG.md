@@ -11,9 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - add a header for `pwd.c`
 - add a basic test suite
+- add a basic `basename` program
 
 ### Changed
 
+- expand and improve the readme
 - namespace header guards
 - use `EXIT_SUCCESS` and `EXIT_FAILURE` everywhere
 - use `main(void)` for `true` and `false`
