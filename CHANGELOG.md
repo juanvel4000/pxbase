@@ -9,13 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- add a header for `pwd.c`
+
 ### Changed
 
 - use `EXIT_SUCCESS` and `EXIT_FAILURE` everywhere
 - use `main(void)` for `true` and `false`
+- include their respective headers for each program
 
 ### Fixed
 
+- fix prose in `yes.1`
 - fix minor inconsistency in `false.1`
 - deduplicate default-arg logic in `yes.c`
 
