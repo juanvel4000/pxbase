@@ -8,3 +8,9 @@ test(
   find_program('test-basename.sh'),
   args: [bins['basename']],
 )
+
+test(
+  'dirname-slices-filename',
+  find_program('test-dirname.sh'),
+  args: [bins['dirname']],
+)

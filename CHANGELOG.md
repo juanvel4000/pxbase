@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add a header for `pwd.c`
 - add a basic test suite
 - add a basic `basename` program
+- add a basic `dirname` program
 
 ### Changed
 
