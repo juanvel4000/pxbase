@@ -1,4 +1,5 @@
 #include <errno.h>
+#include <hbase/common.h>
 #include <hbase/pwd.h>
 #include <limits.h>
 #include <stdio.h>
@@ -6,12 +7,6 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <unistd.h>
-
-static void usage(void)
-{
-    fprintf(stderr, "usage: pwd [-LP]\n");
-    exit(EXIT_FAILURE);
-}
 
 static const char *pwd_getcwd(const char *cwd, int physical)
 {
@@ -24,7 +19,7 @@ static const char *pwd_getcwd(const char *cwd, int physical)
     if (!(pwd = getenv("PWD")) || pwd[0] != '/' || stat(pwd, &pst) < 0)
         return cwd;
     if (stat(cwd, &cst) < 0) {
-        fprintf(stderr, "pwd: stat %s: %s", cwd, strerror(errno));
+        fprintf(stderr, "pwd: stat %s: %s\n", cwd, strerror(errno));
         exit(EXIT_FAILURE);
     }
 
@@ -51,11 +46,11 @@ int pwd(int argc, char **argv)
             physical = 1;
             break;
         case '?':
-            usage();
+            usage_exit(USAGE_STRING);
             break;
         }
     if (optind < argc)
-        usage();
+        usage_exit(USAGE_STRING);
 
     printf("%s\n", pwd_getcwd(cwd, physical));
     return EXIT_SUCCESS;

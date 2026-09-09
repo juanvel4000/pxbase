@@ -1,13 +1,8 @@
+#include <hbase/common.h>
 #include <hbase/dirname.h>
 #include <libgen.h>
 #include <stdio.h>
 #include <stdlib.h>
-
-static void usage(void)
-{
-    fprintf(stderr, "usage: dirname path\n");
-    exit(EXIT_FAILURE);
-}
 
 int get_dirname(int argc, char **argv)
 {
@@ -21,7 +16,7 @@ int get_dirname(int argc, char **argv)
 int main(int argc, char **argv)
 {
     if (argc != 2)
-        usage();
+        usage_exit(USAGE_STRING);
 
     return get_dirname(argc, argv);
 }

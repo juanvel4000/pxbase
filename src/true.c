@@ -1,3 +1,4 @@
+#include <hbase/common.h>
 #include <hbase/true.h>
 #include <stdlib.h>
 

@@ -1,15 +1,11 @@
 #include <hbase/basename.h>
+#include <hbase/common.h>
 #include <libgen.h>
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-static void usage(void)
-{
-    fprintf(stderr, "usage: basename path [suffix]\n");
-    exit(EXIT_FAILURE);
-}
 static void remove_suffix(char *name, const char *suffix)
 {
     size_t name_len;
@@ -33,7 +29,7 @@ int get_basename(int argc, char **argv)
     char *result;
 
     if (argc < 2 || argc > 3)
-        usage();
+        usage_exit(USAGE_STRING);
 
     if (strlen(argv[1]) >= sizeof(path)) {
         fprintf(stderr, "basename: path too long\n");
@@ -58,7 +54,7 @@ int get_basename(int argc, char **argv)
 int main(int argc, char **argv)
 {
     if (argc == 1)
-        usage();
+        usage_exit(USAGE_STRING);
 
     return get_basename(argc, argv);
 }
