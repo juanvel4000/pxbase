@@ -4,6 +4,12 @@
 
 int yes(int argc, char **argv)
 {
+    static char *default_argv[] = {"yes", "y", NULL};
+
+    if (argc <= 1) {
+        argv = default_argv;
+        argc = 2;
+    }
     for (;;) {
         int i;
         for (i = 1; i < argc; i++) {
@@ -22,12 +28,4 @@ int yes(int argc, char **argv)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char **argv)
-{
-    if (argc == 1) {
-        argv[1] = "y";
-        argc = 2;
-    }
-
-    return yes(argc, argv);
-}
+int main(int argc, char **argv) { return yes(argc, argv); }

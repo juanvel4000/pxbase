@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- avoid mutating `argv` in `yes.c`
 - fix prose in `yes.1`
 - fix minor inconsistency in `false.1`
 - deduplicate default-arg logic in `yes.c`
