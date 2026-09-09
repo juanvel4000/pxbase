@@ -1,3 +1,4 @@
+#include <hbase/yes.h>
 #include <stdio.h>
 #include <stdlib.h>
 
