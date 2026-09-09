@@ -1,4 +1,5 @@
 #include <errno.h>
+#include <hbase/pwd.h>
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -30,7 +31,7 @@ static const char *pwd_getcwd(const char *cwd, int physical)
     return (pst.st_dev == cst.st_dev && pst.st_ino == cst.st_ino) ? pwd : cwd;
 }
 
-int main(int argc, char **argv)
+int pwd(int argc, char **argv)
 {
     int opt;
     char cwd[PATH_MAX];
@@ -59,3 +60,5 @@ int main(int argc, char **argv)
     printf("%s\n", pwd_getcwd(cwd, physical));
     return EXIT_SUCCESS;
 }
+
+int main(int argc, char **argv) { return pwd(argc, argv); }
