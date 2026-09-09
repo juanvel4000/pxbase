@@ -14,6 +14,9 @@ int yes(int argc, char **argv)
         }
 
         putchar('\n');
+
+        if (ferror(stdout))
+            return EXIT_FAILURE;
     }
 
     return EXIT_SUCCESS;

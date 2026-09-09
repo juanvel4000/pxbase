@@ -4,3 +4,10 @@ option(
   value: 'enabled',
   description: 'hbase documentation.'
 )
+
+option(
+  'tests',
+  type: 'feature',
+  value: 'enabled',
+  description: 'hbase test suite.'
+)

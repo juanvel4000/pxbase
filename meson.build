@@ -20,8 +20,12 @@ progs = [
 
 include = include_directories('include')
 
+subdir('src')
+
 if get_option('doc').enabled()
   subdir('doc')
 endif
 
-subdir('src')
+if get_option('tests').enabled()
+  subdir('tests')
+endif

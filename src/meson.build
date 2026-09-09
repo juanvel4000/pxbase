@@ -1,8 +1,9 @@
+bins = {}
 foreach prog : progs
-  executable(
+  bins += {prog: executable(
     prog,
     [prog + '.c'],
     include_directories: include,
     install: true,
-  )
+  )}
 endforeach
