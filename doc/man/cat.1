@@ -1,0 +1,31 @@
+.Dd October 4, 2026
+.Dt CAT 1
+.Os
+.Sh NAME
+.Nm cat
+.Nd concatenate files
+.Sh SYNOPSIS
+.Nm
+.Op Fl u
+.Op Ar file ...
+.Sh DESCRIPTION
+.Nm
+reads each
+.Ar file
+in sequence and writes it to stdout.
+if
+.Ar file
+is a single dash
+.Pq Sq \&-
+or absent,
+.Nm
+reads from stdin.
+.Sh OPTIONS
+.Bl -tag -width Ds
+.It Fl u
+ignored, output is unbuffered.
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh AUTHORS
+.An juanvel400

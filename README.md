@@ -2,7 +2,7 @@
 
 POSIX core user utils implementation, written in C.
 
-hbase is a minimalistic implementation of core POSIX user utilities. It aims for POSIX.1-2008 compliance and ANSI C89.
+hbase aims to provide a core userland utilities set conforming to POSIX.1-2008 and implemented purely in strict ANSI C89.
 
 ## currently implemented programs
 
@@ -13,31 +13,16 @@ hbase is a minimalistic implementation of core POSIX user utilities. It aims for
 - `basename`
 - `dirname`
 - `echo`
+- `uname`
+- `cat`
 
 ## quick start
 
-configure the project
-
 ```sh
-meson setup build
-```
-
-build the project
-
-```sh
-meson compile -C build
-```
-
-> optionally, run tests
->
-> ```sh
-> meson test -C build
-> ```
-
-install the project
-
-```sh
-meson install -C build
+meson setup build # setup the project
+meson compile -C build # compile hbase
+meson test -C build # run the test suite
+meson install -C build # install hbase
 ```
 
 ## dependencies
@@ -46,8 +31,8 @@ build-time dependencies include
 
 - Meson
 - Ninja
-- a POSIX-compatible libc
-- a C89-compatible C compiler
+- a `libc` implementing the required POSIX.1-2008 interfaces
+- a C89-compatible C compiler (e.g. `gcc`)
 
 ## building
 
@@ -93,6 +78,7 @@ man pages are installed when documentation is enabled at build time
 | `basename(1)` | the `basename` program |
 | `dirname(1)`  | the `dirname` program  |
 | `echo(1)`     | the `echo` program     |
+| `uname(1)`    | the `uname` program    |
 
 ## project status
 
