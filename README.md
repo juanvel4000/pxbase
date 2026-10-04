@@ -15,6 +15,7 @@ hbase aims to provide a core userland utilities set conforming to POSIX.1-2008 a
 - `echo`
 - `uname`
 - `cat`
+- `mkdir`
 
 ## quick start
 

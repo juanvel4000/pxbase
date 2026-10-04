@@ -57,7 +57,6 @@ int hbase_uname(int argc, char **argv)
             break;
         case '?':
             hbase_usage_exit(USAGE_STRING);
-            return 1;
         }
     }
     if (uname(&u) != 0) {

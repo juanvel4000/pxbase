@@ -1,0 +1,34 @@
+.Dd October 4, 2026
+.Dt MKDIR 1
+.Os
+.Sh NAME
+.Nm mkdir
+.Nd create directories
+.Sh SYNOPSIS
+.Nm
+.Op Fl p
+.Op Fl m Ar mode
+.Ar dir ...
+.Sh DESCRIPTION
+.Nm
+creates directories named by each
+.Ar dir ,
+in the order given.
+.Sh OPTIONS
+.Bl -tag -width Ds
+.It Fl p
+create parent directories, ignores if
+.Ar dir
+already exists.
+.It Fl m Ar mode
+set the file permission bits to
+.Ar mode
+in the created directories.
+parent directories created by
+.Fl p
+use the default mode.
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh AUTHORS
+.An juanvel400
