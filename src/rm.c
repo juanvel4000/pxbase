@@ -193,14 +193,14 @@ int hbase_rm(int argc, char **argv)
             break;
 
         case '?':
-            hbase_usage_exit(USAGE_STRING);
+            hbase_usage_exit(HBASE_RM_USAGE_STRING);
         }
     }
 
     if (optind == argc) {
         if (force)
             return EXIT_SUCCESS;
-        hbase_usage_exit(USAGE_STRING);
+        hbase_usage_exit(HBASE_RM_USAGE_STRING);
     }
 
     for (i = optind; i < argc; i++) {

@@ -13,7 +13,7 @@ int hbase_dirname(char **argv)
 int main(int argc, char **argv)
 {
     if (argc != 2)
-        hbase_usage_exit(USAGE_STRING);
+        hbase_usage_exit(HBASE_DIRNAME_USAGE_STRING);
 
     return hbase_dirname(argv);
 }

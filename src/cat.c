@@ -61,8 +61,7 @@ int hbase_cat(int argc, char **argv)
         case 'u':
             break;
         case '?':
-            hbase_usage_exit(USAGE_STRING);
-            break;
+            hbase_usage_exit(HBASE_CAT_USAGE_STRING);
         }
     }
 

@@ -116,12 +116,12 @@ int hbase_mkdir(int argc, char **argv)
             }
             break;
         case '?':
-            hbase_usage_exit(USAGE_STRING);
+            hbase_usage_exit(HBASE_MKDIR_USAGE_STRING);
         }
     }
 
     if (optind == argc)
-        hbase_usage_exit(USAGE_STRING);
+        hbase_usage_exit(HBASE_MKDIR_USAGE_STRING);
 
     for (i = optind; i < argc; i++) {
         if (p) {

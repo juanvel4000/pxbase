@@ -23,7 +23,6 @@ progs = [
   'cat',
   'mkdir',
   'rm',
-  'ls',
 ]
 
 include = include_directories('include')

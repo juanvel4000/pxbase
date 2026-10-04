@@ -29,7 +29,7 @@ int hbase_basename(int argc, char **argv)
     char *result;
 
     if (argc < 2 || argc > 3)
-        hbase_usage_exit(USAGE_STRING);
+        hbase_usage_exit(HBASE_BASENAME_USAGE_STRING);
 
     if (strlen(argv[1]) >= sizeof(path)) {
         fprintf(stderr, "basename: path too long\n");
@@ -54,7 +54,7 @@ int hbase_basename(int argc, char **argv)
 int main(int argc, char **argv)
 {
     if (argc == 1)
-        hbase_usage_exit(USAGE_STRING);
+        hbase_usage_exit(HBASE_BASENAME_USAGE_STRING);
 
     return hbase_basename(argc, argv);
 }

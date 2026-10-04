@@ -46,10 +46,10 @@ int hbase_pwd(int argc, char **argv)
             physical = 1;
             break;
         case '?':
-            hbase_usage_exit(USAGE_STRING);
+            hbase_usage_exit(HBASE_PWD_USAGE_STRING);
         }
     if (optind < argc)
-        hbase_usage_exit(USAGE_STRING);
+        hbase_usage_exit(HBASE_PWD_USAGE_STRING);
 
     printf("%s\n", pwd_getcwd(cwd, physical));
     return EXIT_SUCCESS;
