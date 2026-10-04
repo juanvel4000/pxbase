@@ -1,0 +1,30 @@
+.Dd October 4, 2026
+.Dt UNAME 1
+.Os
+.Sh NAME
+.Nm uname
+.Nd print system information
+.Sh SYNOPSIS
+.Nm
+.Op Fl asvnrm
+.Sh DESCRIPTION
+print certain system information.
+.Sh OPTIONS
+.Bl -tag -width Ds
+.It Fl a
+print all the available information.
+.It Fl s
+print the kernel name, default.
+.It Fl n
+print the network node hostname.
+.It Fl r
+print the kernel release
+.It Fl v
+print the kernel version
+.It Fl m
+print the machine's architecture.
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh AUTHORS
+.An juanvel400

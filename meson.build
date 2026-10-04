@@ -11,7 +11,7 @@ add_project_arguments(
   language: 'c',
 )
 
-progs = ['yes', 'true', 'pwd', 'false', 'basename', 'dirname', 'echo']
+progs = ['yes', 'true', 'pwd', 'false', 'basename', 'dirname', 'echo', 'uname']
 
 include = include_directories('include')
 
