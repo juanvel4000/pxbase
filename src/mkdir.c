@@ -99,6 +99,7 @@ int hbase_mkdir(int argc, char **argv)
     int has_mode;
     int i;
 
+    mode = 0;
     p = 0;
     has_mode = 0;
     status = EXIT_SUCCESS;
