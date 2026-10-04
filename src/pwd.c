@@ -47,7 +47,6 @@ int hbase_pwd(int argc, char **argv)
             break;
         case '?':
             hbase_usage_exit(USAGE_STRING);
-            break;
         }
     if (optind < argc)
         hbase_usage_exit(USAGE_STRING);
