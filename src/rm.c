@@ -1,3 +1,4 @@
+#include <dirent.h>
 #include <errno.h>
 #include <hbase/common.h>
 #include <hbase/rm.h>
@@ -30,6 +31,135 @@ static int confirm(const char *path, const char *message)
     default:
         return 0;
     }
+}
+
+static int remove_one(const char *path, const struct stat st, int force,
+                      int interactive)
+{
+
+    if (interactive && !confirm(path, "rm: remove '%s'? ")) {
+        return 2;
+    } else if (!force) {
+        if (isatty(STDIN_FILENO) && !S_ISLNK(st.st_mode) &&
+            access(path, W_OK) != 0) {
+            if (!confirm(path, "rm: remove write-protected file '%s'? "))
+                return 2;
+        }
+    }
+    if (unlink(path) != 0) {
+        perror(path);
+        return 1;
+    }
+
+    return 0;
+}
+
+static int remove_tree(const char *path, int force, int interactive)
+{
+    char child[PATH_MAX];
+    int status;
+    DIR *d;
+    int n;
+    struct dirent *entry;
+    struct stat st;
+    int r;
+    int skipped;
+
+    skipped = 0;
+    status = 0;
+
+    if (interactive && !confirm(path, "rm: descend into directory '%s'? "))
+        return 2;
+
+    d = opendir(path);
+
+    if (d == NULL) {
+        perror("opendir");
+        return 1;
+    }
+
+    while ((entry = readdir(d))) {
+        if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0)
+            continue;
+
+        n = snprintf(child, sizeof(child), "%s/%s", path, entry->d_name);
+        if (n < 0 || (size_t)n >= sizeof(child)) {
+            errno = ENAMETOOLONG;
+            perror(path);
+            status = 1;
+            continue;
+        }
+
+        if (lstat(child, &st) != 0) {
+            if (force && errno == ENOENT)
+                continue;
+
+            perror("lstat");
+            status = 1;
+            continue;
+        }
+
+        r = S_ISDIR(st.st_mode) ? remove_tree(child, force, interactive)
+                                : remove_one(child, st, force, interactive);
+
+        if (r == 1) {
+            status = 1;
+        } else if (r == 2) {
+            skipped = 1;
+        }
+    }
+
+    closedir(d);
+    if (status != 0)
+        return 1;
+
+    if (status)
+        return 1;
+
+    if (skipped)
+        return 2;
+
+    if (interactive && !confirm(path, "rm: remove directory '%s'? "))
+        return 2;
+
+    if (rmdir(path) != 0) {
+        perror("rmdir");
+        return 1;
+    }
+
+    return 0;
+}
+
+static int is_dot_or_dotdot(const char *path)
+{
+    size_t len;
+    size_t start;
+    size_t n;
+
+    len = strlen(path);
+
+    while (len > 0 && path[len - 1] == '/') {
+        len--;
+    }
+
+    if (len == 0)
+        return 1;
+
+    start = len;
+
+    while (start > 0 && path[start - 1] != '/') {
+        start--;
+    }
+
+    n = len - start;
+
+    if (n == 1 && path[start] == '.')
+        return 1;
+
+    if (n == 2 && path[start] == '.' && path[start + 1] == '.')
+        return 1;
+
+    return 0;
 }
 
 int hbase_rm(int argc, char **argv)
@@ -67,7 +197,6 @@ int hbase_rm(int argc, char **argv)
         }
     }
 
-    (void)rm_hier;
     if (optind == argc) {
         if (force)
             return EXIT_SUCCESS;
@@ -75,6 +204,13 @@ int hbase_rm(int argc, char **argv)
     }
 
     for (i = optind; i < argc; i++) {
+        if (is_dot_or_dotdot(argv[i])) {
+            fprintf(stderr, "rm: refusing to remove '.' or '..': %s\n",
+                    argv[i]);
+            status = EXIT_FAILURE;
+            continue;
+        }
+
         if (lstat(argv[i], &st) != 0) {
             if (force && errno == ENOENT)
                 continue;
@@ -84,24 +220,19 @@ int hbase_rm(int argc, char **argv)
         }
 
         if (S_ISDIR(st.st_mode)) {
-            fprintf(stderr, "rm: %s: is a directory\n", argv[i]);
-            status = EXIT_FAILURE;
-            continue;
-        }
-
-        if (interactive && !confirm(argv[i], "rm: remove '%s'? ")) {
-            continue;
-        } else if (!force) {
-            if (isatty(STDIN_FILENO) && !S_ISLNK(st.st_mode) &&
-                access(argv[i], W_OK) != 0) {
-                if (!confirm(argv[i], "rm: remove write-protected file '%s'? "))
-                    continue;
+            if (!rm_hier) {
+                fprintf(stderr, "rm: %s: is a directory\n", argv[i]);
+                status = EXIT_FAILURE;
+                continue;
+            } else {
+                if (remove_tree(argv[i], force, interactive) == 1)
+                    status = EXIT_FAILURE;
+                continue;
             }
         }
-        if (unlink(argv[i]) != 0) {
-            perror(argv[i]);
+
+        if (remove_one(argv[i], st, force, interactive) == 1)
             status = EXIT_FAILURE;
-        }
     }
     return status;
 }
