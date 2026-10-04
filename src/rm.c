@@ -9,12 +9,12 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-static int confirm(const char *path)
+static int confirm(const char *path, const char *message)
 {
     char buf[8];
     int c;
 
-    fprintf(stderr, "rm: remove file '%s'? ", path);
+    fprintf(stderr, message, path);
     if (fgets(buf, sizeof(buf), stdin) == NULL)
         return 0;
 
@@ -89,9 +89,15 @@ int hbase_rm(int argc, char **argv)
             continue;
         }
 
-        if (interactive && !confirm(argv[i]))
+        if (interactive && !confirm(argv[i], "rm: remove '%s'? ")) {
             continue;
-
+        } else if (!force) {
+            if (isatty(STDIN_FILENO) && !S_ISLNK(st.st_mode) &&
+                access(argv[i], W_OK) != 0) {
+                if (!confirm(argv[i], "rm: remove write-protected file '%s'? "))
+                    continue;
+            }
+        }
         if (unlink(argv[i]) != 0) {
             perror(argv[i]);
             status = EXIT_FAILURE;
