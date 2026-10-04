@@ -26,7 +26,7 @@ static const char *pwd_getcwd(const char *cwd, int physical)
     return (pst.st_dev == cst.st_dev && pst.st_ino == cst.st_ino) ? pwd : cwd;
 }
 
-int pwd(int argc, char **argv)
+int hbase_pwd(int argc, char **argv)
 {
     int opt;
     char cwd[PATH_MAX];
@@ -46,14 +46,14 @@ int pwd(int argc, char **argv)
             physical = 1;
             break;
         case '?':
-            usage_exit(USAGE_STRING);
+            hbase_usage_exit(USAGE_STRING);
             break;
         }
     if (optind < argc)
-        usage_exit(USAGE_STRING);
+        hbase_usage_exit(USAGE_STRING);
 
     printf("%s\n", pwd_getcwd(cwd, physical));
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char **argv) { return pwd(argc, argv); }
+int main(int argc, char **argv) { return hbase_pwd(argc, argv); }

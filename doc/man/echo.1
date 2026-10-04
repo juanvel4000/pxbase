@@ -1,28 +1,26 @@
-.Dd September 2026
+.Dd October 3, 2026
 .Dt ECHO 1
 .Os
-
 .Sh NAME
-
 .Nm echo
 .Nd print a line of text
-
 .Sh SYNOPSIS
-
 .Nm
 .Op Fl n
 .Ar string ...
-
 .Sh DESCRIPTION
-
 .Nm
 writes each
 .Ar string
 to stdout, separated by spaces and terminated by a newline.
-
 .Sh OPTIONS
-
 .Bl -tag -width -Ds
-
 .It Fl n
 do not print the terminating newline.
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh SEE ALSO
+.Xr printf 1
+.Sh AUTHORS
+.An juanvel400

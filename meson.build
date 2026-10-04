@@ -2,7 +2,7 @@ project(
   'hbase',
   'c',
   version: run_command('cat', 'VERSION', check: true).stdout().strip(),
-  default_options: ['warning_level=3', 'c_std=c89'],
+  default_options: ['warning_level=3', 'c_std=c89', 'werror=true', 'c_args=-Wall -Wextra'],
   meson_version: '>=1.11',
 )
 

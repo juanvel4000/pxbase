@@ -1,34 +1,27 @@
-.Dd September 2026
+.Dd October 3, 2026
 .Dt PWD 1
 .Os
-
 .Sh NAME
-
 .Nm pwd
 .Nd print the current working directory
-
 .Sh SYNOPSIS
-
 .Nm
 .Op Fl LP
-
 .Sh DESCRIPTION
-
 .Nm
 prints the path of the current working directory.
-
 .Sh OPTIONS
-
 .Bl -tag -width Ds
-
 .It Fl L
-
 logical path, uses
 .Ev PWD .
 default option.
-
 .It Fl P
-
 physical path, avoids all symlinks.
-
 .El
+.Sh EXIT STATUS
+.Ex -std
+.Sh SEE ALSO
+.Xr cd 1
+.Sh AUTHORS
+.An juanvel400

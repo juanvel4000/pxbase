@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int echo(int argc, char **argv)
+int hbase_echo(int argc, char **argv)
 {
     int start = 1;
     int newline = 1;
@@ -32,4 +32,4 @@ int echo(int argc, char **argv)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char **argv) { return echo(argc, argv); }
+int main(int argc, char **argv) { return hbase_echo(argc, argv); }

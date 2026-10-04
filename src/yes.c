@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int yes(int argc, char **argv)
+int hbase_yes(int argc, char **argv)
 {
     static char *default_argv[] = {"yes", "y", NULL};
 
@@ -10,6 +10,7 @@ int yes(int argc, char **argv)
         argv = default_argv;
         argc = 2;
     }
+
     for (;;) {
         int i;
         for (i = 1; i < argc; i++) {
@@ -28,4 +29,4 @@ int yes(int argc, char **argv)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char **argv) { return yes(argc, argv); }
+int main(int argc, char **argv) { return hbase_yes(argc, argv); }

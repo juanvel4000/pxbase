@@ -2,7 +2,7 @@
 
 POSIX core user utils implementation, written in C.
 
-hbase is a minimalistic implementation of core POSIX user utilities. It aims for POSIX.1-2013 compliance and ANSI C89.
+hbase is a minimalistic implementation of core POSIX user utilities. It aims for POSIX.1-2008 compliance and ANSI C89.
 
 ## currently implemented programs
 

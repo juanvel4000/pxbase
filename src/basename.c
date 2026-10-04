@@ -23,13 +23,13 @@ static void remove_suffix(char *name, const char *suffix)
     }
 }
 
-int get_basename(int argc, char **argv)
+int hbase_basename(int argc, char **argv)
 {
     char path[PATH_MAX];
     char *result;
 
     if (argc < 2 || argc > 3)
-        usage_exit(USAGE_STRING);
+        hbase_usage_exit(USAGE_STRING);
 
     if (strlen(argv[1]) >= sizeof(path)) {
         fprintf(stderr, "basename: path too long\n");
@@ -54,7 +54,7 @@ int get_basename(int argc, char **argv)
 int main(int argc, char **argv)
 {
     if (argc == 1)
-        usage_exit(USAGE_STRING);
+        hbase_usage_exit(USAGE_STRING);
 
-    return get_basename(argc, argv);
+    return hbase_basename(argc, argv);
 }
