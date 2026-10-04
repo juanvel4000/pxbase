@@ -113,9 +113,6 @@ static int remove_tree(const char *path, int force, int interactive)
     if (status != 0)
         return 1;
 
-    if (status)
-        return 1;
-
     if (skipped)
         return 2;
 

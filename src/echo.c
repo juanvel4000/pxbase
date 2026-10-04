@@ -1,4 +1,3 @@
-
 #include <hbase/common.h>
 #include <hbase/echo.h>
 #include <stdio.h>

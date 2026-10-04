@@ -25,7 +25,7 @@ int hbase_uname(int argc, char **argv)
     int opt;
     struct utsname u;
 
-    s = 1;
+    s = 0;
     v = 0;
     n = 0;
     m = 0;
@@ -59,6 +59,10 @@ int hbase_uname(int argc, char **argv)
             hbase_usage_exit(HBASE_UNAME_USAGE_STRING);
         }
     }
+
+    if (!s && !v && !n && !m && !r)
+        s = 1;
+
     if (uname(&u) != 0) {
         perror("uname");
         return EXIT_FAILURE;
