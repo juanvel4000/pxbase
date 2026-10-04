@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add a basic `uname` program
 - add a basic `cat` program
 - add a basic `mkdir` program
+- add a basic `rm` program
 
 ### Changed
 

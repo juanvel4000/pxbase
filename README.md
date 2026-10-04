@@ -6,16 +6,17 @@ hbase aims to provide a core userland utilities set conforming to POSIX.1-2008 a
 
 ## currently implemented programs
 
-- `yes`
-- `true`
-- `false`
-- `pwd`
-- `basename`
-- `dirname`
-- `echo`
-- `uname`
-- `cat`
-- `mkdir`
+- `yes(1)`: output a string repeatedly
+- `true(1)`: return a successful status code
+- `false(1)`: return an unsuccessful status code
+- `pwd(1)`: print the current working directory
+- `basename(1)`: strip directory and suffix components from path
+- `dirname(1)`: strip last component from path
+- `echo(1)`: print a line of text
+- `uname(1)`: print system information
+- `cat(1)`: concatenate files
+- `mkdir(1)`: create directories
+- `rm(1)`: unlink files
 
 ## quick start
 
@@ -80,6 +81,9 @@ man pages are installed when documentation is enabled at build time
 | `dirname(1)`  | the `dirname` program  |
 | `echo(1)`     | the `echo` program     |
 | `uname(1)`    | the `uname` program    |
+| `cat(1)`      | the `cat` program      |
+| `mkdir(1)`    | the `mkdir` program    |
+| `rm(1)`       | the `rm` program       |
 
 ## project status
 
