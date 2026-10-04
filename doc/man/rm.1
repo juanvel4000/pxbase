@@ -1,0 +1,29 @@
+.Dd October 4, 2026
+.Dt MKDIR 1
+.Os
+.Sh NAME
+.Nm rm
+.Nd unlink files
+.Sh SYNOPSIS
+.Nm
+.Op Fl fiFr
+.Ar file ...
+.Sh DESCRIPTION
+.Nm
+unlinks files in the order given.
+.Sh OPTIONS
+.Bl -tag -width Ds
+.It Fl f
+do not prompt before removing
+.It Fl r
+remove file hierarchies
+.It Fl R
+equivalent to
+.Fl r
+.It Fl i
+prompt before removing each file.
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh AUTHORS
+.An juanvel400
