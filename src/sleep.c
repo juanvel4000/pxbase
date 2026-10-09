@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int hbase_sleep(char **argv, int argc)
+int hbase_sleep(int argc, char **argv)
 {
     char *end;
     unsigned long seconds;
@@ -23,4 +23,4 @@ int hbase_sleep(char **argv, int argc)
     return sleep(seconds);
 }
 
-int main(int argc, char **argv) { return hbase_sleep(argv, argc); }
+int main(int argc, char **argv) { return hbase_sleep(argc, argv); }

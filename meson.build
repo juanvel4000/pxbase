@@ -24,6 +24,8 @@ progs = [
   'mkdir',
   'rm',
   'sleep',
+  'tty',
+  'env',
 ]
 
 include = include_directories('include')
