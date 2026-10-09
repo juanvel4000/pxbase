@@ -18,6 +18,7 @@ hbase aims to provide a core userland utilities set conforming to POSIX.1-2008 a
 - `mkdir(1)`: create directories
 - `rm(1)`: unlink files
 - `sleep(1)`: pause for seconds
+- `tty(1)`: print the name of the terminal connected to stdin
 
 ## quick start
 
@@ -86,6 +87,7 @@ man pages are installed when documentation is enabled at build time
 | `mkdir(1)`    | the `mkdir` program    |
 | `rm(1)`       | the `rm` program       |
 | `sleep(1)`    | the `sleep` program    |
+| `tty(1)`      | the `tty` program      |
 
 ## project status
 
