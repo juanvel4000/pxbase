@@ -19,6 +19,7 @@ hbase aims to provide a core userland utilities set conforming to POSIX.1-2008 a
 - `rm(1)`: unlink files
 - `sleep(1)`: pause for seconds
 - `tty(1)`: print the name of the terminal connected to stdin
+- `rmdir(1)`: remove empty directories
 
 ## quick start
 
@@ -44,10 +45,11 @@ build-time dependencies include
 
 hbase exposes several meson build-time options
 
-| option  | type    | default   | description         |
-| ------- | ------- | --------- | ------------------- |
-| `tests` | feature | `enabled` | hbase test suite    |
-| `doc`   | feature | `enabled` | hbase documentation |
+| option   | type    | default   | description                               |
+| -------- | ------- | --------- | ----------------------------------------- |
+| `tests`  | feature | `enabled` | hbase test suite                          |
+| `doc`    | feature | `enabled` | hbase documentation                       |
+| `static` | boolean | `false`   | build statically linked hbase executables |
 
 > set with, e.g.:
 >
@@ -88,6 +90,7 @@ man pages are installed when documentation is enabled at build time
 | `rm(1)`       | the `rm` program       |
 | `sleep(1)`    | the `sleep` program    |
 | `tty(1)`      | the `tty` program      |
+| `rmdir(1)`    | the `rmdir` program    |
 
 ## project status
 
