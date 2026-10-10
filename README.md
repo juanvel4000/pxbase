@@ -20,6 +20,7 @@ hbase aims to provide a core userland utilities set conforming to POSIX.1-2008 a
 - `sleep(1)`: pause for seconds
 - `tty(1)`: print the name of the terminal connected to stdin
 - `rmdir(1)`: remove empty directories
+- `touch(1)`: update timestamps or create files
 
 ## quick start
 
@@ -91,6 +92,7 @@ man pages are installed when documentation is enabled at build time
 | `sleep(1)`    | the `sleep` program    |
 | `tty(1)`      | the `tty` program      |
 | `rmdir(1)`    | the `rmdir` program    |
+| `touch(1)`    | the `touch` program    |
 
 ## project status
 

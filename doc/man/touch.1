@@ -1,0 +1,33 @@
+.Dd October 3, 2026
+.Dt TOUCH 1
+.Os
+.Sh NAME
+.Nm touch
+.Nd update timestamps or create files
+.Sh SYNOPSIS
+.Nm
+.Op Fl amc
+.Ar file ...
+.Sh DESCRIPTION
+.Nm
+creates files if they don't exist or updates their timestamps.
+.Pp
+.Nm
+does not yet implement
+.Fl d Ar date ,
+.Fl r Ar file ,
+or
+.Fl t Ar timestamp
+.Sh OPTIONS
+.Bl -tag -width Ds
+.It Fl a
+change only the access time.
+.It Fl m
+change only the modification time.
+.It Fl c
+do not create files that do not exist, and do not report an error for them.
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh AUTHORS
+.An juanvel400
