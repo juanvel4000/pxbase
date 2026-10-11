@@ -22,6 +22,7 @@ hbase aims to provide a core userland utilities set conforming to POSIX.1-2008 a
 - `rmdir(1)`: remove empty directories
 - `touch(1)`: update timestamps or create files (unfinished)
 - `test(1)`: compare and validate values (unfinished)
+- `ls(1)`: list directory contents (unfinished)
 
 ## quick start
 
@@ -95,6 +96,7 @@ man pages are installed when documentation is enabled at build time
 | `rmdir(1)`    | the `rmdir` program    |
 | `touch(1)`    | the `touch` program    |
 | `test(1)`     | the `test` program     |
+| `ls(1)`       | the `ls` program       |
 
 ## project status
 

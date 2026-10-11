@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add a basic `sleep` program
 - add a basic `tty` program
 - add a basic `rmdir` program
+- add a basic (unfinished) `touch` program
+- add a basic (unfinished) `test`/`[` program
+- add a basic (unfinished) `ls` program
 
 ## [0.3.0] - 2026-10-04
 

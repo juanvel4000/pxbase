@@ -28,6 +28,7 @@ progs = [
   'rmdir',
   'touch',
   'test',
+  'ls',
 ]
 
 include = include_directories('include')
