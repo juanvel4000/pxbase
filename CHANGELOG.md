@@ -15,6 +15,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add a basic (unfinished) `touch` program
 - add a basic (unfinished) `test`/`[` program
 - add a basic (unfinished) `ls` program
+- add `LICENSE` sections to all manpages
+
+### Changed
+
+- support static builds
 
 ## [0.3.0] - 2026-10-04
 
