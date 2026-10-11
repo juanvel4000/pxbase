@@ -1,34 +1,19 @@
-.Dd October 3, 2026
+.Dd October 10, 2026
 .Dt TEST 1
 .Os
 .Sh NAME
-.Nm test
+.Nm test ,
 .Nd compare and validate values
 .Sh SYNOPSIS
 .Nm
 .Ar expression
 .Pp
-.Nm [
+.Li \&[
 .Ar expression
-.Ar ]
+.Li \&]
 .Sh DESCRIPTION
 .Nm
 validates an expression and returns a status code representing its result.
-.Pp
-.Nm
-does not yet implement
-!,
-.Fl a ,
-.Fl o ,
-.Fl r ,
-.Fl w ,
-.Fl x ,
-.Fl s ,
-.Fl e ,
-.Fl f ,
-or
-.Fl d
-.Sh OPTIONS
 .Bl -tag -width Ds
 .It Fl n Ar string
 the length of
@@ -41,6 +26,50 @@ is zero
 .It Ar string
 equivalent to
 .Fl n Ar string
+.It Ar str1 No = Ar str2
+the strings are identical.
+.It Ar str1 No != Ar str2
+the strings are not identical.
+.It Ar n1 Fl eq Ar n2
+equal.
+.It Ar n1 Fl ne Ar n2
+not equal.
+.It Ar n1 Fl gt Ar n2
+greater than.
+.It Ar n1 Fl ge Ar n2
+greater than or equal.
+.It Ar n1 Fl lt Ar n2
+less than.
+.It Ar n1 Fl le Ar n2
+less than or equal.
+.It Cm \&! Ar expression
+true if
+.Ar expression
+is false.
+.It Fl e Ar file
+.Ar file
+exists.
+.It Fl f Ar file
+.Ar file
+is a regular file.
+.It Fl d Ar file
+.Ar file
+is a directory.
+.It Fl s Ar file
+.Ar file
+exists and is not empty.
+.It Fl r Ar file
+.Ar file
+is readable.
+.It Fl w Ar file
+.Ar file
+is writable.
+.It Fl x Ar file
+.Ar file
+is executable, or searchable if it is a directory.
+.It Fl h Ar file , Fl L Ar file
+.Ar file
+is a symbolic link.
 .El
 .Sh EXIT STATUS
 .Ex -std

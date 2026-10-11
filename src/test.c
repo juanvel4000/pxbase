@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/stat.h>
+#include <unistd.h>
 
 #define TEST_OK 0
 #define TEST_ERR 1
@@ -19,17 +21,70 @@ static int parse_int(const char *s, long *out)
     return 0;
 }
 
-static int test_evaluate_unary(const char *op, const char *item,
-                               const char *name)
+static int is_file_op(const char *op)
 {
-    if (strcmp("-z", op) == 0) {
-        return item[0] == '\0' ? TEST_OK : TEST_ERR;
-    } else if (strcmp("-n", op) == 0) {
-        return item[0] != '\0' ? TEST_OK : TEST_ERR;
+    static const char *ops[] = {"-e", "-f", "-d", "-s", "-r",
+                                "-w", "-x", "-h", "-L", NULL};
+    int i;
+
+    for (i = 0; ops[i] != NULL; i++)
+        if (strcmp(op, ops[i]) == 0)
+            return 1;
+    return 0;
+}
+
+static int test_evaluate_unary_fileop(const char *op, const char *item,
+                                      const char *name)
+{
+    struct stat st;
+
+    if (!is_file_op(op)) {
+        fprintf(stderr, "%s: unknown operator: %s\n", name, op);
+        return TEST_SYN;
     }
+
+    if (strcmp(op, "-r") == 0)
+        return access(item, R_OK) == 0 ? TEST_OK : TEST_ERR;
+
+    if (strcmp(op, "-w") == 0)
+        return access(item, W_OK) == 0 ? TEST_OK : TEST_ERR;
+
+    if (strcmp(op, "-x") == 0)
+        return access(item, X_OK) == 0 ? TEST_OK : TEST_ERR;
+
+    if (strcmp(op, "-h") == 0 || strcmp(op, "-L") == 0)
+        return (lstat(item, &st) == 0 && S_ISLNK(st.st_mode)) ? TEST_OK
+                                                              : TEST_ERR;
+
+    if (stat(item, &st) != 0)
+        return TEST_ERR;
+
+    if (strcmp("-e", op) == 0)
+        return TEST_OK;
+
+    if (strcmp("-f", op) == 0)
+        return S_ISREG(st.st_mode) ? TEST_OK : TEST_ERR;
+
+    if (strcmp("-d", op) == 0)
+        return S_ISDIR(st.st_mode) ? TEST_OK : TEST_ERR;
+
+    if (strcmp("-s", op) == 0)
+        return st.st_size > 0 ? TEST_OK : TEST_ERR;
 
     fprintf(stderr, "%s: unknown operator: %s\n", name, op);
     return TEST_SYN;
+}
+
+static int test_evaluate_unary(const char *op, const char *item,
+                               const char *name)
+{
+    if (strcmp("-z", op) == 0)
+        return item[0] == '\0' ? TEST_OK : TEST_ERR;
+
+    if (strcmp("-n", op) == 0)
+        return item[0] != '\0' ? TEST_OK : TEST_ERR;
+
+    return test_evaluate_unary_fileop(op, item, name);
 }
 
 static int test_evaluate_binary(const char *op, const char *item1,

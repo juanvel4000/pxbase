@@ -21,7 +21,7 @@ hbase aims to provide a core userland utilities set conforming to POSIX.1-2008 a
 - `tty(1)`: print the name of the terminal connected to stdin
 - `rmdir(1)`: remove empty directories
 - `touch(1)`: update timestamps or create files (unfinished)
-- `test(1)`: compare and validate values (unfinished)
+- `test(1)`: compare and validate values
 - `ls(1)`: list directory contents (unfinished)
 
 ## quick start
