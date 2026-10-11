@@ -27,6 +27,7 @@ progs = [
   'tty',
   'rmdir',
   'touch',
+  'test',
 ]
 
 include = include_directories('include')

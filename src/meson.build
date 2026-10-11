@@ -19,3 +19,5 @@ foreach prog : progs
     ),
   }
 endforeach
+
+install_symlink('[', install_dir: get_option('bindir'), pointing_to: 'test')

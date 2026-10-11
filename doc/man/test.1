@@ -1,0 +1,48 @@
+.Dd October 3, 2026
+.Dt TEST 1
+.Os
+.Sh NAME
+.Nm test
+.Nd compare and validate values
+.Sh SYNOPSIS
+.Nm
+.Ar expression
+.Pp
+.Nm [
+.Ar expression
+.Ar ]
+.Sh DESCRIPTION
+.Nm
+validates an expression and returns a status code representing its result.
+.Pp
+.Nm
+does not yet implement
+!,
+.Fl a ,
+.Fl o ,
+.Fl r ,
+.Fl w ,
+.Fl x ,
+.Fl s ,
+.Fl e ,
+.Fl f ,
+or
+.Fl d
+.Sh OPTIONS
+.Bl -tag -width Ds
+.It Fl n Ar string
+the length of
+.Ar string
+is nonzero
+.It Fl z Ar string
+the length of
+.Ar string
+is zero
+.It Ar string
+equivalent to
+.Fl n Ar string
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh AUTHORS
+.An juanvel400
