@@ -1,6 +1,6 @@
 #ifndef HBASE_LS_H
 #define HBASE_LS_H
-#define HBASE_LS_USAGE_STRING "ls"
+#define HBASE_LS_USAGE_STRING "ls [-1la]"
 
 int hbase_ls(int argc, char **argv);
 
