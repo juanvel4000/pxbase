@@ -2,7 +2,9 @@
 
 POSIX core user utils implementation, written in C.
 
-hbase aims to provide a core userland utilities set conforming to POSIX.1-2008 and implemented purely in strict ANSI C89.
+hbase aims to provide a core userland utilities set conforming (mostly) to POSIX.1-2008 and implemented purely in ANSI C.
+
+hbase includes conventional extensions in utilities and functionality
 
 ## currently implemented programs
 
