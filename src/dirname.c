@@ -6,7 +6,7 @@
 
 int hbase_dirname(char **argv)
 {
-    printf("%s\n", dirname(argv[1]));
+    printf("%s\n", (dirname)(argv[1]));
     return EXIT_SUCCESS;
 }
 

@@ -39,12 +39,12 @@ int hbase_basename(int argc, char **argv)
     strcpy(path, argv[1]);
 
     if (argc == 3) {
-        char *base = basename(path);
+        char *base = (basename)(path);
 
         remove_suffix(base, argv[2]);
         printf("%s\n", base);
     } else if (argc == 2) {
-        result = basename(path);
+        result = (basename)(path);
         printf("%s\n", result);
     }
 
