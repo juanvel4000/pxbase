@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - use `_DEFAULT_SOURCE` instead of `_POSIX_C_SOURCE` in meson.build
 - clarify `README.md` overview prose
 - fix `pxbase_tty` function name
+- make `ls_dir` static in `ls.c`
 
 ## [0.4.0] - 2026-10-10
 

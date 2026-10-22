@@ -1,9 +1,9 @@
 #include <dirent.h>
 #include <errno.h>
 #include <grp.h>
+#include <pwd.h>
 #include <pxbase/common.h>
 #include <pxbase/ls.h>
-#include <pwd.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -77,8 +77,8 @@ static void print_permissions(struct stat st)
     putchar((st.st_mode & S_IXOTH) ? 'x' : '-');
 }
 
-int ls_dir(const char *path, int include_dotfiles, int show_names,
-           int long_format, int single_column)
+static int ls_dir(const char *path, int include_dotfiles, int show_names,
+                  int long_format, int single_column)
 {
     DIR *dir;
     struct dirent *entry;
