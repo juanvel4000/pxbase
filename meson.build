@@ -29,6 +29,7 @@ progs = [
   'touch',
   'test',
   'ls',
+  'hostname',
 ]
 
 include = include_directories('include')
