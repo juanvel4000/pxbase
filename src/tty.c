@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int hb_tty(int argc, char **argv)
+int pxbase_tty(int argc, char **argv)
 {
     (void)argc;
     (void)argv;
@@ -17,4 +17,4 @@ int hb_tty(int argc, char **argv)
     return EXIT_FAILURE;
 }
 
-int main(int argc, char **argv) { return hb_tty(argc, argv); }
+int main(int argc, char **argv) { return pxbase_tty(argc, argv); }
