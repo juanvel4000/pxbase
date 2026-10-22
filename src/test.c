@@ -1,5 +1,5 @@
 #include <errno.h>
-#include <hbase/test.h>
+#include <pxbase/test.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -182,7 +182,7 @@ static int test_eval(int n, char **args, const char *name)
     }
 }
 
-int hbase_test(int argc, char **argv)
+int pxbase_test(int argc, char **argv)
 {
     const char *name;
     const char *slash;
@@ -204,4 +204,4 @@ int hbase_test(int argc, char **argv)
     return test_eval(argc - 1, argv + 1, name);
 }
 
-int main(int argc, char **argv) { return hbase_test(argc, argv); }
+int main(int argc, char **argv) { return pxbase_test(argc, argv); }

@@ -1,8 +1,8 @@
 #include <dirent.h>
 #include <errno.h>
 #include <grp.h>
-#include <hbase/common.h>
-#include <hbase/ls.h>
+#include <pxbase/common.h>
+#include <pxbase/ls.h>
 #include <pwd.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -196,7 +196,7 @@ fail:
     return EXIT_FAILURE;
 }
 
-int hbase_ls(int argc, char **argv)
+int pxbase_ls(int argc, char **argv)
 {
     int opt;
     int include_dotfiles;
@@ -224,7 +224,7 @@ int hbase_ls(int argc, char **argv)
             single_column = 1;
             break;
         case '?':
-            hbase_usage_exit(HBASE_LS_USAGE_STRING);
+            pxbase_usage_exit(PXBASE_LS_USAGE_STRING);
         }
     }
 
@@ -243,4 +243,4 @@ int hbase_ls(int argc, char **argv)
     return ret;
 }
 
-int main(int argc, char **argv) { return hbase_ls(argc, argv); }
+int main(int argc, char **argv) { return pxbase_ls(argc, argv); }

@@ -1,5 +1,5 @@
-#include <hbase/common.h>
-#include <hbase/uname.h>
+#include <pxbase/common.h>
+#include <pxbase/uname.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/utsname.h>
@@ -15,7 +15,7 @@ static void field(const char *s)
     first = 0;
 }
 
-int hbase_uname(int argc, char **argv)
+int pxbase_uname(int argc, char **argv)
 {
     int s;
     int v;
@@ -56,7 +56,7 @@ int hbase_uname(int argc, char **argv)
             s = 1;
             break;
         case '?':
-            hbase_usage_exit(HBASE_UNAME_USAGE_STRING);
+            pxbase_usage_exit(PXBASE_UNAME_USAGE_STRING);
         }
     }
 
@@ -84,4 +84,4 @@ int hbase_uname(int argc, char **argv)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char **argv) { return hbase_uname(argc, argv); }
+int main(int argc, char **argv) { return pxbase_uname(argc, argv); }

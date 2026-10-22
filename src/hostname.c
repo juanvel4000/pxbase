@@ -1,12 +1,12 @@
-#include <hbase/common.h>
-#include <hbase/hostname.h>
+#include <pxbase/common.h>
+#include <pxbase/hostname.h>
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 
-int hbase_hostname(int argc, char **argv)
+int pxbase_hostname(int argc, char **argv)
 {
     char hostname[HOST_NAME_MAX + 1];
 
@@ -29,10 +29,10 @@ int hbase_hostname(int argc, char **argv)
             return EXIT_FAILURE;
         }
     } else {
-        hbase_usage_exit(HBASE_HOSTNAME_USAGE_STRING);
+        pxbase_usage_exit(PXBASE_HOSTNAME_USAGE_STRING);
     }
 
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char **argv) { return hbase_hostname(argc, argv); }
+int main(int argc, char **argv) { return pxbase_hostname(argc, argv); }

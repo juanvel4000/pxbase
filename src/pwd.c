@@ -1,6 +1,6 @@
 #include <errno.h>
-#include <hbase/common.h>
-#include <hbase/pwd.h>
+#include <pxbase/common.h>
+#include <pxbase/pwd.h>
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,7 +26,7 @@ static const char *pwd_getcwd(const char *cwd, int physical)
     return (pst.st_dev == cst.st_dev && pst.st_ino == cst.st_ino) ? pwd : cwd;
 }
 
-int hbase_pwd(int argc, char **argv)
+int pxbase_pwd(int argc, char **argv)
 {
     int opt;
     char cwd[PATH_MAX];
@@ -46,13 +46,13 @@ int hbase_pwd(int argc, char **argv)
             physical = 1;
             break;
         case '?':
-            hbase_usage_exit(HBASE_PWD_USAGE_STRING);
+            pxbase_usage_exit(PXBASE_PWD_USAGE_STRING);
         }
     if (optind < argc)
-        hbase_usage_exit(HBASE_PWD_USAGE_STRING);
+        pxbase_usage_exit(PXBASE_PWD_USAGE_STRING);
 
     printf("%s\n", pwd_getcwd(cwd, physical));
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char **argv) { return hbase_pwd(argc, argv); }
+int main(int argc, char **argv) { return pxbase_pwd(argc, argv); }

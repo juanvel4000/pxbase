@@ -1,10 +1,10 @@
-#include <hbase/common.h>
-#include <hbase/echo.h>
+#include <pxbase/common.h>
+#include <pxbase/echo.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-int hbase_echo(int argc, char **argv)
+int pxbase_echo(int argc, char **argv)
 {
     int start = 1;
     int newline = 1;
@@ -31,4 +31,4 @@ int hbase_echo(int argc, char **argv)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char **argv) { return hbase_echo(argc, argv); }
+int main(int argc, char **argv) { return pxbase_echo(argc, argv); }

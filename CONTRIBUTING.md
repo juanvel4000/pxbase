@@ -1,27 +1,27 @@
-# contributing to hbase
+# contributing to pxbase
 
-hbase is maintained on [sourcehut](https://sr.ht/~juanvel400/hbase) -- this document explains how to report bugs and send patches there.
+pxbase is maintained on [sourcehut](https://sr.ht/~juanvel400/pxbase) -- this document explains how to report bugs and send patches there.
 
 ## reporting bugs / requesting features
 
-use the [ticket tracker](https://todo.sr.ht/~juanvel400/hbase). when filing a bug include
+use the [ticket tracker](https://todo.sr.ht/~juanvel400/pxbase). when filing a bug include
 
-- your OS and hbase version
+- your OS and pxbase version
 - steps to reproduce
 - what you expected vs. what happened
 
 ## sending patches
 
-hbase doesn't use GitHub-style pull requests. instead:
+pxbase doesn't use GitHub-style pull requests. instead:
 
 1. clone the repo and make your changes on a branch
 2. commit with a clear, scoped message (see "commit style" below)
 3. configure `git send-email` if you haven't already -- see
    [sr.ht's send-email tutorial](https://git-send-email.io/)
-4. send your patch to: **~juanvel400/hbase-devel@lists.sr.ht**
+4. send your patch to: **~juanvel400/pxbase-devel@lists.sr.ht**
 
 ```sh
- $ git send-email --to=~juanvel400/hbase-devel@lists.sr.ht origin/main..HEAD
+ $ git send-email --to=~juanvel400/pxbase-devel@lists.sr.ht origin/main..HEAD
 ```
 
 ## commit style

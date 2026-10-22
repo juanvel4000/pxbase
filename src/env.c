@@ -1,6 +1,6 @@
 #include <errno.h>
-#include <hbase/common.h>
-#include <hbase/env.h>
+#include <pxbase/common.h>
+#include <pxbase/env.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -8,7 +8,7 @@
 
 extern char **environ;
 
-int hbase_env(int argc, char **argv)
+int pxbase_env(int argc, char **argv)
 {
     char **ep;
     char *p;
@@ -22,7 +22,7 @@ int hbase_env(int argc, char **argv)
             cleanenv[0] = NULL;
             break;
         case '?':
-            hbase_usage_exit(HBASE_ENV_USAGE_STRING);
+            pxbase_usage_exit(PXBASE_ENV_USAGE_STRING);
         }
     }
 
@@ -45,4 +45,4 @@ int hbase_env(int argc, char **argv)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char **argv) { return hbase_env(argc, argv); }
+int main(int argc, char **argv) { return pxbase_env(argc, argv); }

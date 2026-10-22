@@ -1,5 +1,5 @@
-#include <hbase/common.h>
-#include <hbase/printenv.h>
+#include <pxbase/common.h>
+#include <pxbase/printenv.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -7,7 +7,7 @@
 
 extern char **environ;
 
-int hbase_printenv(int argc, char **argv)
+int pxbase_printenv(int argc, char **argv)
 {
     char *cp;
     char **ep;
@@ -17,7 +17,7 @@ int hbase_printenv(int argc, char **argv)
     while ((opt = getopt(argc, argv, "")) != -1)
         switch (opt)
         case '?':
-            hbase_usage_exit(HBASE_PRINTENV_USAGE_STRING);
+            pxbase_usage_exit(PXBASE_PRINTENV_USAGE_STRING);
 
     argc -= optind;
     argv += optind;
@@ -41,4 +41,4 @@ int hbase_printenv(int argc, char **argv)
     return EXIT_FAILURE;
 }
 
-int main(int argc, char **argv) { return hbase_printenv(argc, argv); }
+int main(int argc, char **argv) { return pxbase_printenv(argc, argv); }

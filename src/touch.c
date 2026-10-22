@@ -1,7 +1,7 @@
 #include <errno.h>
 #include <fcntl.h>
-#include <hbase/common.h>
-#include <hbase/touch.h>
+#include <pxbase/common.h>
+#include <pxbase/touch.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/stat.h>
@@ -36,7 +36,7 @@ static int touch_one(const char *file, int a, int m, int c)
     return EXIT_SUCCESS;
 }
 
-int hbase_touch(int argc, char **argv)
+int pxbase_touch(int argc, char **argv)
 {
     int opt;
 
@@ -63,7 +63,7 @@ int hbase_touch(int argc, char **argv)
             c = 1;
             break;
         case '?':
-            hbase_usage_exit(HBASE_TOUCH_USAGE_STRING);
+            pxbase_usage_exit(PXBASE_TOUCH_USAGE_STRING);
         }
     }
 
@@ -73,7 +73,7 @@ int hbase_touch(int argc, char **argv)
     }
 
     if (optind == argc)
-        hbase_usage_exit(HBASE_TOUCH_USAGE_STRING);
+        pxbase_usage_exit(PXBASE_TOUCH_USAGE_STRING);
 
     for (i = optind; i < argc; i++)
         if (touch_one(argv[i], a, m, c) != 0)
@@ -82,4 +82,4 @@ int hbase_touch(int argc, char **argv)
     return ret;
 }
 
-int main(int argc, char **argv) { return hbase_touch(argc, argv); }
+int main(int argc, char **argv) { return pxbase_touch(argc, argv); }

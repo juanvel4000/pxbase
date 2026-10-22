@@ -1,10 +1,10 @@
-# hbase
+# pxbase
 
 POSIX core user utils implementation.
 
-hbase aims to provide a core userland utilities set conforming (mostly) to POSIX.1-2008 and implemented purely in ANSI C.
+pxbase aims to provide a core userland utilities set conforming (mostly) to POSIX.1-2008 and implemented purely in ANSI C.
 
-hbase includes conventional extensions in utilities and functionality
+> pxbase includes conventional extensions in utilities and functionality
 
 ## currently implemented programs
 
@@ -36,9 +36,9 @@ hbase includes conventional extensions in utilities and functionality
 
 ```sh
 meson setup build # setup the project
-meson compile -C build # compile hbase
+meson compile -C build # compile pxbase
 meson test -C build # run the test suite
-meson install -C build # install hbase
+meson install -C build # install pxbase
 ```
 
 ## dependencies
@@ -54,13 +54,13 @@ build-time dependencies include
 
 ### configuration
 
-hbase exposes several meson build-time options
+pxbase exposes several meson build-time options
 
-| option   | type    | default   | description                               |
-| -------- | ------- | --------- | ----------------------------------------- |
-| `tests`  | feature | `enabled` | hbase test suite                          |
-| `doc`    | feature | `enabled` | hbase documentation                       |
-| `static` | boolean | `false`   | build statically linked hbase executables |
+| option   | type    | default   | description                                |
+| -------- | ------- | --------- | ------------------------------------------ |
+| `tests`  | feature | `enabled` | pxbase test suite                          |
+| `doc`    | feature | `enabled` | pxbase documentation                       |
+| `static` | boolean | `false`   | build statically linked pxbase executables |
 
 > set with, e.g.:
 >
@@ -114,13 +114,13 @@ man pages are installed when documentation is enabled at build time
 
 ## project status
 
-hbase is in active development and should currently be considered experimental.
+pxbase is in active development and should currently be considered experimental.
 
-the implemented utilities are functional, but POSIX conformance and portability are still being validated. hbase is not currently recommended as a system utility replacement.
+the implemented utilities are functional, but POSIX conformance and portability are still being validated. pxbase is not currently recommended as a system utility replacement.
 
-- [CHANGELOG.md](CHANGELOG.md) -- release history
-- [CONTRIBUTING.md](CONTRIBUTING.md) -- how to report bugs and send patches
+- [CHANGELOG.md](CHANGELOG.md) — release history
+- [CONTRIBUTING.md](CONTRIBUTING.md) — how to report bugs and send patches
 
 ## license
 
-BSD-3-Clause, see [LICENSE](LICENSE).
+[BSD-3-Clause](https://spdx.org/licenses/BSD-3-Clause.html), see [LICENSE](LICENSE).

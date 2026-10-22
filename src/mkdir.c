@@ -1,6 +1,6 @@
 #include <errno.h>
-#include <hbase/common.h>
-#include <hbase/mkdir.h>
+#include <pxbase/common.h>
+#include <pxbase/mkdir.h>
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -90,7 +90,7 @@ static int parse_mode(const char *s, mode_t *out)
     return 0;
 }
 
-int hbase_mkdir(int argc, char **argv)
+int pxbase_mkdir(int argc, char **argv)
 {
     int opt;
     int status;
@@ -117,12 +117,12 @@ int hbase_mkdir(int argc, char **argv)
             }
             break;
         case '?':
-            hbase_usage_exit(HBASE_MKDIR_USAGE_STRING);
+            pxbase_usage_exit(PXBASE_MKDIR_USAGE_STRING);
         }
     }
 
     if (optind == argc)
-        hbase_usage_exit(HBASE_MKDIR_USAGE_STRING);
+        pxbase_usage_exit(PXBASE_MKDIR_USAGE_STRING);
 
     for (i = optind; i < argc; i++) {
         if (p) {
@@ -149,4 +149,4 @@ int hbase_mkdir(int argc, char **argv)
     return status;
 }
 
-int main(int argc, char **argv) { return hbase_mkdir(argc, argv); }
+int main(int argc, char **argv) { return pxbase_mkdir(argc, argv); }

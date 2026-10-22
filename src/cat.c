@@ -1,7 +1,7 @@
 #include <errno.h>
 #include <fcntl.h>
-#include <hbase/cat.h>
-#include <hbase/common.h>
+#include <pxbase/cat.h>
+#include <pxbase/common.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -47,7 +47,7 @@ static int copy_fd(int fd)
     return 0;
 }
 
-int hbase_cat(int argc, char **argv)
+int pxbase_cat(int argc, char **argv)
 {
     int opt;
     int status;
@@ -61,7 +61,7 @@ int hbase_cat(int argc, char **argv)
         case 'u':
             break;
         case '?':
-            hbase_usage_exit(HBASE_CAT_USAGE_STRING);
+            pxbase_usage_exit(PXBASE_CAT_USAGE_STRING);
         }
     }
 
@@ -90,4 +90,4 @@ int hbase_cat(int argc, char **argv)
     return status;
 }
 
-int main(int argc, char **argv) { return hbase_cat(argc, argv); }
+int main(int argc, char **argv) { return pxbase_cat(argc, argv); }

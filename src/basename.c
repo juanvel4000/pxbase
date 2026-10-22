@@ -1,5 +1,5 @@
-#include <hbase/basename.h>
-#include <hbase/common.h>
+#include <pxbase/basename.h>
+#include <pxbase/common.h>
 #include <libgen.h>
 #include <limits.h>
 #include <stdio.h>
@@ -23,13 +23,13 @@ static void remove_suffix(char *name, const char *suffix)
     }
 }
 
-int hbase_basename(int argc, char **argv)
+int pxbase_basename(int argc, char **argv)
 {
     char path[PATH_MAX];
     char *result;
 
     if (argc < 2 || argc > 3)
-        hbase_usage_exit(HBASE_BASENAME_USAGE_STRING);
+        pxbase_usage_exit(PXBASE_BASENAME_USAGE_STRING);
 
     if (strlen(argv[1]) >= sizeof(path)) {
         fprintf(stderr, "basename: path too long\n");
@@ -54,7 +54,7 @@ int hbase_basename(int argc, char **argv)
 int main(int argc, char **argv)
 {
     if (argc == 1)
-        hbase_usage_exit(HBASE_BASENAME_USAGE_STRING);
+        pxbase_usage_exit(PXBASE_BASENAME_USAGE_STRING);
 
-    return hbase_basename(argc, argv);
+    return pxbase_basename(argc, argv);
 }

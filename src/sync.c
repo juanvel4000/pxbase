@@ -1,9 +1,9 @@
-#include <hbase/common.h>
-#include <hbase/sync.h>
+#include <pxbase/common.h>
+#include <pxbase/sync.h>
 #include <stdlib.h>
 #include <unistd.h>
 
-int hbase_sync(int argc, char **argv)
+int pxbase_sync(int argc, char **argv)
 {
     (void)argc;
     (void)argv;
@@ -11,4 +11,4 @@ int hbase_sync(int argc, char **argv)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char **argv) { return hbase_sync(argc, argv); }
+int main(int argc, char **argv) { return pxbase_sync(argc, argv); }

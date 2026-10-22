@@ -1,7 +1,7 @@
 #include <dirent.h>
 #include <errno.h>
-#include <hbase/common.h>
-#include <hbase/rm.h>
+#include <pxbase/common.h>
+#include <pxbase/rm.h>
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -159,7 +159,7 @@ static int is_dot_or_dotdot(const char *path)
     return 0;
 }
 
-int hbase_rm(int argc, char **argv)
+int pxbase_rm(int argc, char **argv)
 {
     int opt;
     int status;
@@ -190,14 +190,14 @@ int hbase_rm(int argc, char **argv)
             break;
 
         case '?':
-            hbase_usage_exit(HBASE_RM_USAGE_STRING);
+            pxbase_usage_exit(PXBASE_RM_USAGE_STRING);
         }
     }
 
     if (optind == argc) {
         if (force)
             return EXIT_SUCCESS;
-        hbase_usage_exit(HBASE_RM_USAGE_STRING);
+        pxbase_usage_exit(PXBASE_RM_USAGE_STRING);
     }
 
     for (i = optind; i < argc; i++) {
@@ -234,4 +234,4 @@ int hbase_rm(int argc, char **argv)
     return status;
 }
 
-int main(int argc, char **argv) { return hbase_rm(argc, argv); }
+int main(int argc, char **argv) { return pxbase_rm(argc, argv); }

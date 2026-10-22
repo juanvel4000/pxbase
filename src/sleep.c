@@ -1,16 +1,16 @@
 #include <errno.h>
-#include <hbase/common.h>
-#include <hbase/sleep.h>
+#include <pxbase/common.h>
+#include <pxbase/sleep.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
-int hbase_sleep(int argc, char **argv)
+int pxbase_sleep(int argc, char **argv)
 {
     char *end;
     unsigned long seconds;
     if (argc != 2)
-        hbase_usage_exit(HBASE_SLEEP_USAGE_STRING);
+        pxbase_usage_exit(PXBASE_SLEEP_USAGE_STRING);
 
     errno = 0;
     seconds = strtoul(argv[1], &end, 10);
@@ -23,4 +23,4 @@ int hbase_sleep(int argc, char **argv)
     return sleep(seconds);
 }
 
-int main(int argc, char **argv) { return hbase_sleep(argc, argv); }
+int main(int argc, char **argv) { return pxbase_sleep(argc, argv); }

@@ -1,12 +1,12 @@
 #include <errno.h>
-#include <hbase/common.h>
-#include <hbase/rmdir.h>
+#include <pxbase/common.h>
+#include <pxbase/rmdir.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 
-int hbase_rmdir(int argc, char **argv)
+int pxbase_rmdir(int argc, char **argv)
 {
     int i;
     int ret;
@@ -14,7 +14,7 @@ int hbase_rmdir(int argc, char **argv)
     ret = EXIT_SUCCESS;
 
     if (argc == 1)
-        hbase_usage_exit(HBASE_RMDIR_USAGE_STRING);
+        pxbase_usage_exit(PXBASE_RMDIR_USAGE_STRING);
 
     for (i = 1; i < argc; i++) {
         if (rmdir(argv[i]) != 0) {
@@ -27,4 +27,4 @@ int hbase_rmdir(int argc, char **argv)
     return ret;
 }
 
-int main(int argc, char **argv) { return hbase_rmdir(argc, argv); }
+int main(int argc, char **argv) { return pxbase_rmdir(argc, argv); }

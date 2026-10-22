@@ -2,14 +2,19 @@ option(
   'doc',
   type: 'feature',
   value: 'enabled',
-  description: 'hbase documentation.',
+  description: 'pxbase documentation.',
 )
 
-option('tests', type: 'feature', value: 'enabled', description: 'hbase test suite.')
+option(
+  'tests',
+  type: 'feature',
+  value: 'enabled',
+  description: 'pxbase test suite.',
+)
 
 option(
   'static',
   type: 'boolean',
   value: false,
-  description: 'build statically linked hbase executables.',
+  description: 'build statically linked pxbase executables.',
 )

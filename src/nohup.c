@@ -1,7 +1,7 @@
 #include <errno.h>
 #include <fcntl.h>
-#include <hbase/common.h>
-#include <hbase/nohup.h>
+#include <pxbase/common.h>
+#include <pxbase/nohup.h>
 #include <limits.h>
 #include <signal.h>
 #include <stdio.h>
@@ -51,10 +51,10 @@ dupl:
     if (fd != STDOUT_FILENO)
         close(fd);
 }
-int hbase_nohup(int argc, char **argv)
+int pxbase_nohup(int argc, char **argv)
 {
     if (argc < 2)
-        hbase_usage_exit(HBASE_NOHUP_USAGE_STRING);
+        pxbase_usage_exit(PXBASE_NOHUP_USAGE_STRING);
 
     if (isatty(STDOUT_FILENO))
         mkfile();
@@ -79,4 +79,4 @@ int hbase_nohup(int argc, char **argv)
     return EXIT_FAILURE;
 }
 
-int main(int argc, char **argv) { return hbase_nohup(argc, argv); }
+int main(int argc, char **argv) { return pxbase_nohup(argc, argv); }
