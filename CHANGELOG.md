@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - clarify `README.md` overview prose
 - fix `pxbase_tty` function name
 - make `ls_dir` static in `ls.c`
+- make `mkfile` static in `nohup.c`
 
 ## [0.4.0] - 2026-10-10
 
