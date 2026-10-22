@@ -26,7 +26,7 @@ hbase includes conventional extensions in utilities and functionality
 - `test(1)`: compare and validate values
 - `ls(1)`: list directory contents (unfinished)
 - `hostname(1)`: set/get the system's hostname
-- `sync(1)`: flush cache
+- `sync(8)`: flush cache
 
 ## quick start
 
@@ -102,7 +102,7 @@ man pages are installed when documentation is enabled at build time
 | `test(1)`     | the `test` program     |
 | `ls(1)`       | the `ls` program       |
 | `hostname(1)` | the `hostname` program |
-| `sync(1)`     | the `sync` program     |
+| `sync(8)`     | the `sync` program     |
 
 ## project status
 
