@@ -1,3 +1,5 @@
+#include <hbase/common.h>
+#include <hbase/sync.h>
 #include <stdlib.h>
 #include <unistd.h>
 

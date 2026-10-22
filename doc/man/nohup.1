@@ -1,0 +1,28 @@
+.Dd October 22, 2026
+.Dt NOHUP 1
+.Os
+.Sh NAME
+.Nm nohup
+.Nd invoke a command immune to hangups
+.Sh SYNOPSIS
+.Nm
+.Ar command
+.Sh DESCRIPTION
+.Nm
+invokes
+.Ar command
+and ignores the signals
+.Dv SIGHUP
+and
+.Dv SIGQUIT .
+.Pp
+if stdout is a terminal, the stdout is appended to
+.Pa nohup.out .
+if stderr is a terminal, it is also redirected to
+.Pa nohup.out .
+.Sh EXIT STATUS
+.Ex -std
+.Sh LICENSE
+BSD-3-Clause, see the source code for details.
+.Sh AUTHORS
+.An juanvel400

@@ -4,4 +4,4 @@
 
 int hbase_sync(int argc, char **argv);
 
-#endif /* HBASE_BASENAME_H */
+#endif /* HBASE_SYNC_H */

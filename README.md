@@ -1,6 +1,6 @@
 # hbase
 
-POSIX core user utils implementation, written in C.
+POSIX core user utils implementation.
 
 hbase aims to provide a core userland utilities set conforming (mostly) to POSIX.1-2008 and implemented purely in ANSI C.
 
@@ -30,6 +30,7 @@ hbase includes conventional extensions in utilities and functionality
 - `env(1)`: set environment and execute a command, or print environment
 - `printenv(1)`: print out the environment
 - `logname(1)`: print the user's login name
+- `nohup(1)`: invoke a command immune to hangups
 
 ## quick start
 
@@ -47,7 +48,7 @@ build-time dependencies include
 - Meson
 - Ninja
 - a `libc` implementing the required POSIX.1-2008 interfaces
-- a C89-compatible C compiler (e.g. `gcc`)
+- a C89-compatible C compiler (e.g. `clang`)
 
 ## building
 
@@ -109,6 +110,7 @@ man pages are installed when documentation is enabled at build time
 | `env(1)`      | the `env` program      |
 | `printenv(1)` | the `printenv` program |
 | `logname(1)`  | the `logname` program  |
+| `nohup(1)`    | the `nohup` program    |
 
 ## project status
 
