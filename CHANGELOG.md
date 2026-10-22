@@ -32,6 +32,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - make `mkfile` static in `nohup.c`
 - move `argc == 1` check to function top in `basename.c`
 
+### Removed
+
+- remove the test suite
+
 ## [0.4.0] - 2026-10-10
 
 ### Added

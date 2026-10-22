@@ -6,13 +6,6 @@ option(
 )
 
 option(
-  'tests',
-  type: 'feature',
-  value: 'enabled',
-  description: 'pxbase test suite.',
-)
-
-option(
   'static',
   type: 'boolean',
   value: false,
