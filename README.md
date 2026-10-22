@@ -2,7 +2,7 @@
 
 POSIX core user utils implementation.
 
-pxbase aims to provide a core userland utilities set conforming (mostly) to POSIX.1-2008 and implemented purely in ANSI C.
+pxbase (f.k.a. hbase) aims to provide a core userland utilities set conforming (mostly) to POSIX.1-2008 and implemented purely in ANSI C.
 
 > pxbase includes conventional extensions in utilities and functionality
 
@@ -37,7 +37,6 @@ pxbase aims to provide a core userland utilities set conforming (mostly) to POSI
 ```sh
 meson setup build # setup the project
 meson compile -C build # compile pxbase
-meson test -C build # run the test suite
 meson install -C build # install pxbase
 ```
 
@@ -58,31 +57,17 @@ build-time dependencies include
 
 pxbase exposes several meson build-time options
 
-| option   | type    | default   | description                                |
-| -------- | ------- | --------- | ------------------------------------------ |
-| `tests`  | feature | `enabled` | pxbase test suite                          |
-| `doc`    | feature | `enabled` | pxbase documentation                       |
-| `static` | boolean | `false`   | build statically linked pxbase executables |
+| option      | type    | default    | description                                |
+| ----------- | ------- | ---------- | ------------------------------------------ |
+| `doc`       | feature | `enabled`  | pxbase documentation                       |
+| `static`    | boolean | `false`    | build statically linked pxbase executables |
+| `multicall` | feature | `disabled` | build a pxbase multicall executable        |
 
 > set with, e.g.:
 >
 > ```sh
-> meson setup build -Dtests=enabled -Ddoc=disabled
+> meson setup build -Ddoc=disabled
 > ```
-
-### testing
-
-the `tests/` directory provides a simple test suite for
-
-- validating true/false status code
-- validating pwd logical path resolution
-- yes output generation
-
-these can be executed by running
-
-```sh
- meson test -C build
-```
 
 ## documentation
 
