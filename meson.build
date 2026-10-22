@@ -33,6 +33,7 @@ progs = [
   'sync',
   'env',
   'printenv',
+  'logname',
 ]
 
 include = include_directories('include')

@@ -29,6 +29,7 @@ hbase includes conventional extensions in utilities and functionality
 - `sync(8)`: flush cache
 - `env(1)`: set environment and execute a command, or print environment
 - `printenv(1)`: print out the environment
+- `logname(1)`: print the user's login name
 
 ## quick start
 
@@ -107,6 +108,7 @@ man pages are installed when documentation is enabled at build time
 | `sync(8)`     | the `sync` program     |
 | `env(1)`      | the `env` program      |
 | `printenv(1)` | the `printenv` program |
+| `logname(1)`  | the `logname` program  |
 
 ## project status
 

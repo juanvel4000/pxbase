@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add a basic `sync` utility
 - add a basic `env` utility
 - add a basic `printenv` utility
+- add a basic `logname` utility
 
 ### Fixed
 
