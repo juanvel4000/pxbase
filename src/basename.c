@@ -1,7 +1,7 @@
-#include <pxbase/basename.h>
-#include <pxbase/common.h>
 #include <libgen.h>
 #include <limits.h>
+#include <pxbase/basename.h>
+#include <pxbase/common.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -28,6 +28,9 @@ int pxbase_basename(int argc, char **argv)
     char path[PATH_MAX];
     char *result;
 
+    if (argc == 1)
+        pxbase_usage_exit(PXBASE_BASENAME_USAGE_STRING);
+
     if (argc < 2 || argc > 3)
         pxbase_usage_exit(PXBASE_BASENAME_USAGE_STRING);
 
@@ -51,10 +54,4 @@ int pxbase_basename(int argc, char **argv)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char **argv)
-{
-    if (argc == 1)
-        pxbase_usage_exit(PXBASE_BASENAME_USAGE_STRING);
-
-    return pxbase_basename(argc, argv);
-}
+int main(int argc, char **argv) { return pxbase_basename(argc, argv); }

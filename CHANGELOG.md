@@ -29,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fix `pxbase_tty` function name
 - make `ls_dir` static in `ls.c`
 - make `mkfile` static in `nohup.c`
+- move `argc == 1` check to function top in `basename.c`
 
 ## [0.4.0] - 2026-10-10
 
