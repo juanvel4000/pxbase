@@ -82,4 +82,8 @@ int pxbase_touch(int argc, char **argv)
     return ret;
 }
 
+#ifndef PXBASE_MULTICALL
+
 int main(int argc, char **argv) { return pxbase_touch(argc, argv); }
+
+#endif

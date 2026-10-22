@@ -27,4 +27,8 @@ int pxbase_rmdir(int argc, char **argv)
     return ret;
 }
 
+#ifndef PXBASE_MULTICALL
+
 int main(int argc, char **argv) { return pxbase_rmdir(argc, argv); }
+
+#endif

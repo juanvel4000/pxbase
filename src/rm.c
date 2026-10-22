@@ -1,8 +1,8 @@
 #include <dirent.h>
 #include <errno.h>
+#include <limits.h>
 #include <pxbase/common.h>
 #include <pxbase/rm.h>
-#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -234,4 +234,8 @@ int pxbase_rm(int argc, char **argv)
     return status;
 }
 
+#ifndef PXBASE_MULTICALL
+
 int main(int argc, char **argv) { return pxbase_rm(argc, argv); }
+
+#endif

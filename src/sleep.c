@@ -23,4 +23,8 @@ int pxbase_sleep(int argc, char **argv)
     return sleep(seconds);
 }
 
+#ifndef PXBASE_MULTICALL
+
 int main(int argc, char **argv) { return pxbase_sleep(argc, argv); }
+
+#endif

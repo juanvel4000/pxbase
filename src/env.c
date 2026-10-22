@@ -45,4 +45,8 @@ int pxbase_env(int argc, char **argv)
     return EXIT_SUCCESS;
 }
 
+#ifndef PXBASE_MULTICALL
+
 int main(int argc, char **argv) { return pxbase_env(argc, argv); }
+
+#endif

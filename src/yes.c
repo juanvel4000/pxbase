@@ -29,4 +29,8 @@ int pxbase_yes(int argc, char **argv)
     return EXIT_SUCCESS;
 }
 
+#ifndef PXBASE_MULTICALL
+
 int main(int argc, char **argv) { return pxbase_yes(argc, argv); }
+
+#endif

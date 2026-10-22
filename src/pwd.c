@@ -1,7 +1,7 @@
 #include <errno.h>
+#include <limits.h>
 #include <pxbase/common.h>
 #include <pxbase/pwd.h>
-#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -55,4 +55,8 @@ int pxbase_pwd(int argc, char **argv)
     return EXIT_SUCCESS;
 }
 
+#ifndef PXBASE_MULTICALL
+
 int main(int argc, char **argv) { return pxbase_pwd(argc, argv); }
+
+#endif

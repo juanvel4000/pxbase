@@ -90,4 +90,8 @@ int pxbase_cat(int argc, char **argv)
     return status;
 }
 
+#ifndef PXBASE_MULTICALL
+
 int main(int argc, char **argv) { return pxbase_cat(argc, argv); }
+
+#endif

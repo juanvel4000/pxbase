@@ -1,6 +1,6 @@
+#include <libgen.h>
 #include <pxbase/common.h>
 #include <pxbase/dirname.h>
-#include <libgen.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -12,4 +12,8 @@ int pxbase_dirname(int argc, char **argv)
     return EXIT_SUCCESS;
 }
 
+#ifndef PXBASE_MULTICALL
+
 int main(int argc, char **argv) { return pxbase_dirname(argc, argv); }
+
+#endif

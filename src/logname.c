@@ -1,6 +1,6 @@
+#include <limits.h>
 #include <pxbase/common.h>
 #include <pxbase/logname.h>
-#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -20,4 +20,8 @@ int pxbase_logname(int argc, char **argv)
     return EXIT_SUCCESS;
 }
 
+#ifndef PXBASE_MULTICALL
+
 int main(int argc, char **argv) { return pxbase_logname(argc, argv); }
+
+#endif

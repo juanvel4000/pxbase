@@ -84,4 +84,8 @@ int pxbase_uname(int argc, char **argv)
     return EXIT_SUCCESS;
 }
 
+#ifndef PXBASE_MULTICALL
+
 int main(int argc, char **argv) { return pxbase_uname(argc, argv); }
+
+#endif

@@ -9,15 +9,47 @@ if get_option('static')
 endif
 
 foreach prog : progs
-  bins += {
-    prog: executable(
-      prog,
-      [prog + '.c'],
-      link_args: prog_link_args,
-      dependencies: [commondep],
-      install: true,
-    ),
-  }
+  if get_option('multicall').enabled()
+    bins += {
+      prog: static_library(
+        prog,
+        [prog + '.c'],
+        link_args: prog_link_args,
+        c_args: ['-DPXBASE_MULTICALL'],
+        dependencies: [commondep],
+        install: false,
+      ),
+    }
+  else
+    bins += {
+      prog: executable(
+        prog,
+        [prog + '.c'],
+        link_args: prog_link_args,
+        dependencies: [commondep],
+        install: true,
+      ),
+    }
+  endif
 endforeach
 
-install_symlink('[', install_dir: get_option('bindir'), pointing_to: 'test')
+if get_option('multicall').enabled()
+  executable(
+    'pxbase',
+    files('pxbase.c'),
+    link_args: prog_link_args,
+    link_with: bins.values(),
+    dependencies: [commondep],
+    install: true,
+  )
+
+  foreach prog : progs
+    install_symlink(prog, install_dir: get_option('bindir'), pointing_to: 'pxbase')
+  endforeach
+endif
+
+install_symlink(
+  '[',
+  install_dir: get_option('bindir'),
+  pointing_to: get_option('multicall').enabled() ? 'pxbase' : 'test',
+)

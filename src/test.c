@@ -204,4 +204,8 @@ int pxbase_test(int argc, char **argv)
     return test_eval(argc - 1, argv + 1, name);
 }
 
+#ifndef PXBASE_MULTICALL
+
 int main(int argc, char **argv) { return pxbase_test(argc, argv); }
+
+#endif

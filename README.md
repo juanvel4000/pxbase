@@ -41,6 +41,8 @@ meson test -C build # run the test suite
 meson install -C build # install pxbase
 ```
 
+> the `pxbase` multicall executable can be enabled via the `-Dmulticall=enabled` flag during `meson setup`
+
 ## dependencies
 
 build-time dependencies include

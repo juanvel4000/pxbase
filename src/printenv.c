@@ -41,4 +41,8 @@ int pxbase_printenv(int argc, char **argv)
     return EXIT_FAILURE;
 }
 
+#ifndef PXBASE_MULTICALL
+
 int main(int argc, char **argv) { return pxbase_printenv(argc, argv); }
+
+#endif

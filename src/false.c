@@ -1,6 +1,15 @@
 #include <pxbase/false.h>
 #include <stdlib.h>
 
-int pxbase_false(void) { return EXIT_FAILURE; }
+int pxbase_false(int argc, char **argv)
+{
+    (void)argc;
+    (void)argv;
+    return EXIT_FAILURE;
+}
 
-int main(void) { return pxbase_false(); }
+#ifndef PXBASE_MULTICALL
+
+int main(int argc, char **argv) { return pxbase_false(argc, argv); }
+
+#endif

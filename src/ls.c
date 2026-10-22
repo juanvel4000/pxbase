@@ -243,4 +243,8 @@ int pxbase_ls(int argc, char **argv)
     return ret;
 }
 
+#ifndef PXBASE_MULTICALL
+
 int main(int argc, char **argv) { return pxbase_ls(argc, argv); }
+
+#endif

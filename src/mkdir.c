@@ -1,7 +1,7 @@
 #include <errno.h>
+#include <limits.h>
 #include <pxbase/common.h>
 #include <pxbase/mkdir.h>
-#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -149,4 +149,8 @@ int pxbase_mkdir(int argc, char **argv)
     return status;
 }
 
+#ifndef PXBASE_MULTICALL
+
 int main(int argc, char **argv) { return pxbase_mkdir(argc, argv); }
+
+#endif

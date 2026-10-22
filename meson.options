@@ -18,3 +18,10 @@ option(
   value: false,
   description: 'build statically linked pxbase executables.',
 )
+
+option(
+  'multicall',
+  type: 'feature',
+  value: 'disabled',
+  description: 'build a pxbase multicall executable',
+)
