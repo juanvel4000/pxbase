@@ -1,0 +1,48 @@
+#include <errno.h>
+#include <hbase/common.h>
+#include <hbase/env.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
+extern char **environ;
+
+int hbase_env(int argc, char **argv)
+{
+    char **ep;
+    char *p;
+    char *cleanenv[1];
+    int opt;
+
+    while ((opt = getopt(argc, argv, "i")) != -1) {
+        switch (opt) {
+        case 'i':
+            environ = cleanenv;
+            cleanenv[0] = NULL;
+            break;
+        case '?':
+            hbase_usage_exit(HBASE_ENV_USAGE_STRING);
+        }
+    }
+
+    for (argv += optind; *argv && (p = strchr(*argv, '=')); argv++) {
+        if (setenv(*argv, ++p, 1) != 0) {
+            perror("env");
+            return EXIT_FAILURE;
+        }
+    }
+
+    if (*argv) {
+        execvp(*argv, argv);
+        fprintf(stderr, "env: %s: %s\n", *argv, strerror(errno));
+        return EXIT_FAILURE;
+    }
+
+    for (ep = environ; *ep; ep++)
+        printf("%s\n", *ep);
+
+    return EXIT_SUCCESS;
+}
+
+int main(int argc, char **argv) { return hbase_env(argc, argv); }

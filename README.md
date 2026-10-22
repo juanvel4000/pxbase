@@ -27,6 +27,7 @@ hbase includes conventional extensions in utilities and functionality
 - `ls(1)`: list directory contents (unfinished)
 - `hostname(1)`: set/get the system's hostname
 - `sync(8)`: flush cache
+- `env(1)`: set environment and execute a command, or print environment
 
 ## quick start
 
@@ -103,6 +104,7 @@ man pages are installed when documentation is enabled at build time
 | `ls(1)`       | the `ls` program       |
 | `hostname(1)` | the `hostname` program |
 | `sync(8)`     | the `sync` program     |
+| `env(1)`      | the `env` program      |
 
 ## project status
 

@@ -10,7 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - add `-l` and `-1` to ls
-- add a basic `hostname` program
+- add a basic `hostname` utility
+- add a basic `sync` utility
+- add a basic `env` utility
 
 ### Fixed
 
