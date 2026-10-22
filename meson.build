@@ -30,6 +30,7 @@ progs = [
   'test',
   'ls',
   'hostname',
+  'sync',
 ]
 
 include = include_directories('include')
