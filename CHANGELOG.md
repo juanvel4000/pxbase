@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - add a basic `ln` utility
 
+### Removed
+
+- remove `OPTIONS` and `LICENSE` sections from manpages
+
 ## [0.5.0] - 2026-10-23
 
 ### Added
