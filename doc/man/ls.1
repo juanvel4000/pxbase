@@ -1,4 +1,4 @@
-.Dd October 10, 2026
+.Dd October 23, 2026
 .Dt LS 1
 .Os
 .Sh NAME
@@ -6,7 +6,7 @@
 .Nd list directory contents
 .Sh SYNOPSIS
 .Nm
-.Op Fl a
+.Op Fl 1la
 .Op Ar file ...
 .Sh DESCRIPTION
 list filenames in a directory, sorted alphabetically.
@@ -16,13 +16,16 @@ the options are as follows:
 .It Fl a
 print all entries, including those starting with
 .Dq \&. .
+.It Fl l
+print entries in a comprehensive format.
+.It Fl 1
+print one entry per line.
 .El
 .Sh EXIT STATUS
 .Ex -std
 .Sh BUGS
 .Nm
 does not yet implement:
-.Fl 1 ,
 .Fl d ,
 .Fl R ,
 .Fl A ,
@@ -31,6 +34,6 @@ does not yet implement:
 .Fl s ,
 .Fl t ,
 or
-.Fl r
+.Fl r .
 .Sh AUTHORS
 .An juanvel400

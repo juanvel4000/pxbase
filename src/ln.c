@@ -55,10 +55,10 @@ static int do_link(const char *target, const char *src, int isdir, int force,
             fprintf(stderr, "ln: %s: name too long\n", src);
             return EXIT_FAILURE;
         }
-    }
 
-    src = path;
-    exists = lstat(src, &st) == 0;
+        src = path;
+        exists = lstat(src, &st) == 0;
+    }
 
     if (symbolic == 0 && exists != 0 &&
         (follow ? stat(target, &st2) : lstat(target, &st2)) == 0 &&
