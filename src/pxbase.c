@@ -7,6 +7,7 @@
 #include <pxbase/env.h>
 #include <pxbase/false.h>
 #include <pxbase/hostname.h>
+#include <pxbase/ln.h>
 #include <pxbase/logname.h>
 #include <pxbase/ls.h>
 #include <pxbase/mkdir.h>
@@ -41,6 +42,7 @@ static const struct applet applets[] = {{"[", pxbase_test},
                                         {"env", pxbase_env},
                                         {"false", pxbase_false},
                                         {"hostname", pxbase_hostname},
+                                        {"ln", pxbase_ln},
                                         {"logname", pxbase_logname},
                                         {"ls", pxbase_ls},
                                         {"mkdir", pxbase_mkdir},

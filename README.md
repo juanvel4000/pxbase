@@ -31,6 +31,7 @@ pxbase (f.k.a. hbase) aims to provide a core userland utilities set conforming (
 - `printenv(1)`: print out the environment
 - `logname(1)`: print the user's login name
 - `nohup(1)`: invoke a command immune to hangups
+- `ln(1)`: create links
 
 ## quick start
 
@@ -98,6 +99,7 @@ man pages are installed when documentation is enabled at build time
 | `printenv(1)` | the `printenv` program |
 | `logname(1)`  | the `logname` program  |
 | `nohup(1)`    | the `nohup` program    |
+| `ln(1)`    | the `ln` program    |
 
 ## project status
 

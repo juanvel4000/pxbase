@@ -1,0 +1,55 @@
+.Dd October 23, 2026
+.Dt LN 1
+.Os
+.Sh NAME
+.Nm ln
+.Nd create links
+.Sh SYNOPSIS
+.Nm
+.Op Fl fs
+.Op Fl L Ns | Ns Fl P
+.Ar target
+.Op Ar linkname
+.Pp
+.Nm
+.Op Fl fs
+.Op Fl L Ns | Ns Fl P
+.Ar target ...
+.Ar directory
+.Sh DESCRIPTION
+.Nm
+creates a link for
+.Ar target
+at
+.Ar linkname .
+.Pp
+if multiple targets are specified, the last operand must be an existing
+.Ar directory
+and a link to each
+.Ar target
+is created inside of it, using the target's basename.
+.Pp
+if no
+.Ar linkname
+is specified, link
+.Ar target
+under its basename in the current directory.
+.Sh OPTIONS
+.Bl -tag -width Ds
+.It Fl f
+force the creation of the link by removing any files by the same name.
+.It Fl s
+create a symlink
+.It Fl L
+when creating a hard link for a symbolic link,
+create a hard link for the target of the symbolic link.
+.It Fl P
+when creating a hard link for a symbolic link,
+create a hard link for the symbolic link itself.
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh LICENSE
+BSD-3-Clause, see the source code for details.
+.Sh AUTHORS
+.An juanvel400

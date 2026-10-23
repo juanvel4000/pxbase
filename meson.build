@@ -35,6 +35,7 @@ progs = [
   'printenv',
   'logname',
   'nohup',
+  'ln',
 ]
 
 include = include_directories('include')
