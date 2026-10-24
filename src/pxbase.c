@@ -7,6 +7,7 @@
 #include <pxbase/env.h>
 #include <pxbase/false.h>
 #include <pxbase/hostname.h>
+#include <pxbase/link.h>
 #include <pxbase/ln.h>
 #include <pxbase/logname.h>
 #include <pxbase/ls.h>
@@ -23,6 +24,7 @@
 #include <pxbase/true.h>
 #include <pxbase/tty.h>
 #include <pxbase/uname.h>
+#include <pxbase/unlink.h>
 #include <pxbase/yes.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -42,6 +44,7 @@ static const struct applet applets[] = {{"[", pxbase_test},
                                         {"env", pxbase_env},
                                         {"false", pxbase_false},
                                         {"hostname", pxbase_hostname},
+                                        {"link", pxbase_link},
                                         {"ln", pxbase_ln},
                                         {"logname", pxbase_logname},
                                         {"ls", pxbase_ls},
@@ -57,6 +60,7 @@ static const struct applet applets[] = {{"[", pxbase_test},
                                         {"true", pxbase_true},
                                         {"tty", pxbase_tty},
                                         {"uname", pxbase_uname},
+                                        {"unlink", pxbase_unlink},
                                         {"yes", pxbase_yes},
                                         {NULL, NULL}};
 

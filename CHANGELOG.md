@@ -10,6 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - add a basic `ln` utility
+- add a basic `link` utility
+- add a basic `unlink` utility
+
+### Fixed
+
+- add missing flags to `ls.1`
 
 ### Removed
 

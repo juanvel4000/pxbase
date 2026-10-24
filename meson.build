@@ -36,6 +36,8 @@ progs = [
   'logname',
   'nohup',
   'ln',
+  'link',
+  'unlink',
 ]
 
 include = include_directories('include')

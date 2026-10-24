@@ -32,6 +32,8 @@ pxbase (f.k.a. hbase) aims to provide a core userland utilities set conforming (
 - `logname(1)`: print the user's login name
 - `nohup(1)`: invoke a command immune to hangups
 - `ln(1)`: create links
+- `link(1)`: make a hard link
+- `link(1)`: unlink a file
 
 ## quick start
 
@@ -99,7 +101,9 @@ man pages are installed when documentation is enabled at build time
 | `printenv(1)` | the `printenv` program |
 | `logname(1)`  | the `logname` program  |
 | `nohup(1)`    | the `nohup` program    |
-| `ln(1)`    | the `ln` program    |
+| `ln(1)`       | the `ln` program       |
+| `link(1)`     | the `link` program     |
+| `unlink(1)`   | the `unlink` program   |
 
 ## project status
 
