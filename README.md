@@ -33,7 +33,8 @@ pxbase (f.k.a. hbase) aims to provide a core userland utilities set conforming (
 - `nohup(1)`: invoke a command immune to hangups
 - `ln(1)`: create links
 - `link(1)`: make a hard link
-- `link(1)`: unlink a file
+- `unlink(1)`: unlink a file
+- `mktemp(1)`: create a temporary file or directory
 
 ## quick start
 
@@ -104,6 +105,7 @@ man pages are installed when documentation is enabled at build time
 | `ln(1)`       | the `ln` program       |
 | `link(1)`     | the `link` program     |
 | `unlink(1)`   | the `unlink` program   |
+| `mktemp(1)`   | the `mktemp` program   |
 
 ## project status
 

@@ -1,0 +1,27 @@
+.Dd October 27, 2026
+.Dt MKTEMP 1
+.Os
+.Sh NAME
+.Nm mktemp
+.Nd create a temporary file or directory
+.Sh SYNOPSIS
+.Nm
+.Op Fl dt
+.Op Fl p Ar dir
+.Op Ar template
+.Sh DESCRIPTION
+.Nm
+create a temporary file or directory and print its name.
+.Pp
+.Ar template
+must contain at least 3 consecutive
+.Dq X
+. if
+.Ar template
+elis not specified, default to
+tmp.XXXXXXXXXX
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh AUTHORS
+.An juanvel400

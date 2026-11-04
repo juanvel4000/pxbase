@@ -12,6 +12,7 @@
 #include <pxbase/logname.h>
 #include <pxbase/ls.h>
 #include <pxbase/mkdir.h>
+#include <pxbase/mktemp.h>
 #include <pxbase/nohup.h>
 #include <pxbase/printenv.h>
 #include <pxbase/pwd.h>
@@ -49,6 +50,7 @@ static const struct applet applets[] = {{"[", pxbase_test},
                                         {"logname", pxbase_logname},
                                         {"ls", pxbase_ls},
                                         {"mkdir", pxbase_mkdir},
+                                        {"mktemp", pxbase_mktemp},
                                         {"nohup", pxbase_nohup},
                                         {"printenv", pxbase_printenv},
                                         {"pwd", pxbase_pwd},
