@@ -1,0 +1,43 @@
+.Dd October 21, 2026
+.Dt HEAD 1
+.Os
+.Sh NAME
+.Nm head
+.Nd display first lines of files
+.Sh SYNOPSIS
+.Nm
+.Op Fl n Ar number
+.Op Ar file ...
+.Sh DESCRIPTION
+.Nm
+prints the first
+.Ar number
+lines of a file, if
+.Ar number
+is not provided,
+.Nm
+will read the first 10 lines.
+.Pp
+if
+.Ar file ...
+is not provided,
+.Nm
+will read from stdin.
+.Pp
+if multiple files are provided,
+.Nm
+will prepend the
+.Qq ==> filename <==
+header to each read file.
+.Pp
+the options are as follows:
+.Bl -tag -width Ds
+.It Fl n Ar number
+read the first
+.Ar number
+lines of a file.
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh AUTHORS
+.An juanvel400

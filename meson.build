@@ -38,7 +38,8 @@ progs = [
   'ln',
   'link',
   'unlink',
-  'mktemp'
+  'mktemp',
+  'head',
 ]
 
 include = include_directories('include')

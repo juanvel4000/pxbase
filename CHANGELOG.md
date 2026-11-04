@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add a basic `ln` utility
 - add a basic `link` utility
 - add a basic `unlink` utility
+- add a basic `mktemp` utility
+- add a basic `head` utility
 
 ### Fixed
 
