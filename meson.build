@@ -40,6 +40,7 @@ progs = [
   'unlink',
   'mktemp',
   'head',
+  'whoami',
 ]
 
 include = include_directories('include')

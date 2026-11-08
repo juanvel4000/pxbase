@@ -36,6 +36,7 @@ pxbase (f.k.a. hbase) aims to provide a core userland utilities set conforming (
 - `unlink(1)`: unlink a file
 - `mktemp(1)`: create a temporary file or directory
 - `head(1)`: display first lines of files
+- `whoami(1)`: print user name or uid
 
 ## quick start
 
@@ -108,6 +109,7 @@ man pages are installed when documentation is enabled at build time
 | `unlink(1)`   | the `unlink` program   |
 | `mktemp(1)`   | the `mktemp` program   |
 | `head(1)`     | the `head` program     |
+| `whoami(1)`   | the `whoami` program   |
 
 ## project status
 

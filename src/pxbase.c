@@ -27,6 +27,7 @@
 #include <pxbase/tty.h>
 #include <pxbase/uname.h>
 #include <pxbase/unlink.h>
+#include <pxbase/whoami.h>
 #include <pxbase/yes.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -37,22 +38,37 @@ struct applet {
     int (*fn)(int, char **);
 };
 
-static const struct applet applets[] = {
-    {"[", pxbase_test},          {"basename", pxbase_basename},
-    {"cat", pxbase_cat},         {"test", pxbase_test},
-    {"dirname", pxbase_dirname}, {"echo", pxbase_echo},
-    {"env", pxbase_env},         {"false", pxbase_false},
-    {"head", pxbase_head},       {"hostname", pxbase_hostname},
-    {"link", pxbase_link},       {"ln", pxbase_ln},
-    {"logname", pxbase_logname}, {"ls", pxbase_ls},
-    {"mkdir", pxbase_mkdir},     {"mktemp", pxbase_mktemp},
-    {"nohup", pxbase_nohup},     {"printenv", pxbase_printenv},
-    {"pwd", pxbase_pwd},         {"rm", pxbase_rm},
-    {"rmdir", pxbase_rmdir},     {"sleep", pxbase_sleep},
-    {"sync", pxbase_sync},       {"touch", pxbase_touch},
-    {"true", pxbase_true},       {"tty", pxbase_tty},
-    {"uname", pxbase_uname},     {"unlink", pxbase_unlink},
-    {"yes", pxbase_yes},         {NULL, NULL}};
+static const struct applet applets[] = {{"[", pxbase_test},
+                                        {"basename", pxbase_basename},
+                                        {"cat", pxbase_cat},
+                                        {"test", pxbase_test},
+                                        {"dirname", pxbase_dirname},
+                                        {"echo", pxbase_echo},
+                                        {"env", pxbase_env},
+                                        {"false", pxbase_false},
+                                        {"head", pxbase_head},
+                                        {"hostname", pxbase_hostname},
+                                        {"link", pxbase_link},
+                                        {"ln", pxbase_ln},
+                                        {"logname", pxbase_logname},
+                                        {"ls", pxbase_ls},
+                                        {"mkdir", pxbase_mkdir},
+                                        {"mktemp", pxbase_mktemp},
+                                        {"nohup", pxbase_nohup},
+                                        {"printenv", pxbase_printenv},
+                                        {"pwd", pxbase_pwd},
+                                        {"rm", pxbase_rm},
+                                        {"rmdir", pxbase_rmdir},
+                                        {"sleep", pxbase_sleep},
+                                        {"sync", pxbase_sync},
+                                        {"touch", pxbase_touch},
+                                        {"true", pxbase_true},
+                                        {"tty", pxbase_tty},
+                                        {"uname", pxbase_uname},
+                                        {"unlink", pxbase_unlink},
+                                        {"whoami", pxbase_whoami},
+                                        {"yes", pxbase_yes},
+                                        {NULL, NULL}};
 
 static int run_applet(const char *name, int argc, char **argv)
 {
