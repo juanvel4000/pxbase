@@ -1,0 +1,25 @@
+.Dd November 9, 2026
+.Dt MKFIFO 1
+.Os
+.Sh NAME
+.Nm mkfifo
+.Nd create named pipes
+.Sh SYNOPSIS
+.Nm
+.Op Fl m Ar mode
+.Ar file ...
+.Sh DESCRIPTION
+.Nm
+creates named pipes (FIFOs) named by each
+.Ar file .
+.Pp
+the options are as follows:
+.Bl -tag -width Ds
+.It Fl m Ar mode
+set the file permission bits to
+.Ar mode .
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh AUTHORS
+.An juanvel400

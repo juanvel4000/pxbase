@@ -37,6 +37,7 @@ pxbase (f.k.a. hbase) aims to provide a core userland utilities set conforming (
 - `mktemp(1)`: create a temporary file or directory
 - `head(1)`: display first lines of files
 - `whoami(1)`: print user name or uid
+- `mkfifo(1)`: create named pipes
 
 ## quick start
 

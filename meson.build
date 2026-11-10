@@ -41,6 +41,7 @@ progs = [
   'mktemp',
   'head',
   'whoami',
+  'mkfifo',
 ]
 
 include = include_directories('include')

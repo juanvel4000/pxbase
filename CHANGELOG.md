@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add a basic `head` utility
 - add a basic `whoami` utility
 - add basic multi-column output in `ls`
+- add a basic `mkfifo` utility
 
 ### Fixed
 
