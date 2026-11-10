@@ -7,10 +7,84 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/ioctl.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <termios.h>
 #include <time.h>
 #include <unistd.h>
+
+static int get_term_width(void)
+{
+    const char *cols;
+    struct winsize ws;
+    int width;
+
+    width = 80;
+
+    cols = getenv("COLUMNS");
+    if (cols != NULL) {
+        width = atoi(cols);
+        if (width > 0)
+            return width;
+    }
+
+    if (ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws) == 0 && ws.ws_col > 0)
+        width = ws.ws_col;
+
+    return width;
+}
+
+static void print_columns(char **names, size_t count, int term_width)
+{
+    size_t i;
+    size_t col;
+    size_t row;
+    size_t nrows;
+    size_t ncols;
+    size_t maxlen;
+    size_t col_width;
+    size_t pad;
+    maxlen = 0;
+
+    if (count == 0)
+        return;
+
+    for (i = 0; i < count; i++) {
+        size_t len = strlen(names[i]);
+        if (len > maxlen)
+            maxlen = len;
+    }
+
+    col_width = maxlen + 2;
+    if (col_width == 0)
+        col_width = 1;
+
+    ncols = term_width / col_width;
+    if (ncols < 1)
+        ncols = 1;
+
+    nrows = (count + ncols - 1) / ncols;
+
+    for (row = 0; row < nrows; row++) {
+        for (col = 0; col < ncols; col++) {
+            i = col * nrows + row;
+            if (i >= count)
+                break;
+
+            printf("%s", names[i]);
+
+            if (col + 1 < ncols && (col + 1) * nrows + row < count) {
+                pad = col_width - strlen(names[i]);
+                while (pad--) {
+                    putchar(' ');
+                }
+            }
+        }
+
+        putchar('\n');
+    }
+}
 
 static int cmp_names(const void *a, const void *b)
 {
@@ -138,10 +212,8 @@ static int ls_dir(const char *path, int include_dotfiles, int show_names,
     if (count > 1)
         qsort(names, count, sizeof(char *), cmp_names);
 
-    for (i = 0; i < count; i++) {
-        if (i > 0 && !single_column && !long_format)
-            putchar(' ');
-        if (long_format) {
+    if (long_format) {
+        for (i = 0; i < count; i++) {
             path_len = strlen(path);
             name_len = strlen(names[i]);
             full_path = malloc(path_len + name_len + 2);
@@ -171,15 +243,15 @@ static int ls_dir(const char *path, int include_dotfiles, int show_names,
             printf(" %s\n", names[i]);
 
             free(full_path);
-        } else {
-            printf("%s", names[i]);
-            if (single_column)
-                putchar('\n');
         }
-    }
 
-    if (!single_column && !long_format)
-        putchar('\n');
+    } else if (single_column || !isatty(STDOUT_FILENO)) {
+        for (i = 0; i < count; i++)
+            printf("%s\n", names[i]);
+
+    } else {
+        print_columns(names, count, get_term_width());
+    }
 
     while (count > 0)
         free(names[--count]);

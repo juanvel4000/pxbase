@@ -77,39 +77,7 @@ pxbase exposes several meson build-time options
 
 ## documentation
 
-man pages are installed when documentation is enabled at build time
-
-| manpage       | describes              |
-| ------------- | ---------------------- |
-| `yes(1)`      | the `yes` program      |
-| `true(1)`     | the `true` program     |
-| `false(1)`    | the `false` program    |
-| `pwd(1)`      | the `pwd` program      |
-| `basename(1)` | the `basename` program |
-| `dirname(1)`  | the `dirname` program  |
-| `echo(1)`     | the `echo` program     |
-| `uname(1)`    | the `uname` program    |
-| `cat(1)`      | the `cat` program      |
-| `mkdir(1)`    | the `mkdir` program    |
-| `rm(1)`       | the `rm` program       |
-| `sleep(1)`    | the `sleep` program    |
-| `tty(1)`      | the `tty` program      |
-| `rmdir(1)`    | the `rmdir` program    |
-| `touch(1)`    | the `touch` program    |
-| `test(1)`     | the `test` program     |
-| `ls(1)`       | the `ls` program       |
-| `hostname(1)` | the `hostname` program |
-| `sync(8)`     | the `sync` program     |
-| `env(1)`      | the `env` program      |
-| `printenv(1)` | the `printenv` program |
-| `logname(1)`  | the `logname` program  |
-| `nohup(1)`    | the `nohup` program    |
-| `ln(1)`       | the `ln` program       |
-| `link(1)`     | the `link` program     |
-| `unlink(1)`   | the `unlink` program   |
-| `mktemp(1)`   | the `mktemp` program   |
-| `head(1)`     | the `head` program     |
-| `whoami(1)`   | the `whoami` program   |
+man pages are installed when documentation is enabled at build-time (`-Ddoc=enabled`).
 
 ## project status
 
