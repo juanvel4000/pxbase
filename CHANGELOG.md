@@ -15,8 +15,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add a basic `mktemp` utility
 - add a basic `head` utility
 - add a basic `whoami` utility
-- add basic multi-column output in `ls`
 - add a basic `mkfifo` utility
+
+### Changed
+
+- basic multi-column output in `ls`
 
 ### Fixed
 
@@ -83,13 +86,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add a basic `mkdir` program
 - add a basic `rm` program
 
-### Changed
-
 ### Fixed
 
 - clean up blank lines in manpages
-
-### Removed
 
 ## [0.2.0] - 2026-09-09
 
@@ -117,8 +116,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fix minor inconsistency in `false.1`
 - deduplicate default-arg logic in `yes.c`
 
-### Removed
-
 ## [0.1.0] - 2026-09-08
 
 ### Added
@@ -128,9 +125,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add a basic `true` program
 - add a basic `yes` program
 - add `VERSION`, `CONTRIBUTING.md`, `README.md`, `LICENSE`, `CHANGELOG.md`, `.gitignore`, and a `.clang-format`
-
-### Changed
-
-### Fixed
-
-### Removed
