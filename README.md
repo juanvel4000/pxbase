@@ -2,7 +2,7 @@
 
 POSIX core user utils implementation.
 
-pxbase (f.k.a. hbase) aims to provide a core userland utilities set conforming (mostly) to POSIX.1-2008 and implemented purely in ANSI C.
+pxbase (f.k.a. hbase) aims to provide a core userland utilities set conforming (mostly) to POSIX.1-2008, written in ANSI C against POSIX interfaces.
 
 > pxbase includes conventional extensions in utilities and functionality
 
